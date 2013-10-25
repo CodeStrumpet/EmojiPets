@@ -1,0 +1,26 @@
+PODS:
+  - CocoaAsyncSocket (7.3.2)
+  - CocoaHTTPServer (2.3):
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+  - CocoaLumberjack (1.6.2)
+  - Facebook-iOS-SDK (3.9.0)
+  - Parse-iOS-SDK (1.2.15):
+    - Facebook-iOS-SDK (~> 3.7)
+  - RoutingHTTPServer (1.0.0):
+    - CocoaHTTPServer (~> 2.3)
+
+DEPENDENCIES:
+  - Facebook-iOS-SDK (~> 3.9.0)
+  - Parse-iOS-SDK (~> 1.2.15)
+  - RoutingHTTPServer
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 977404129ec8505fee1c3701956b769e3bb10ea7
+  CocoaHTTPServer: 7c2fce6617f7fda0e3f4fc34f96e562caa7c7bd8
+  CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
+  Facebook-iOS-SDK: 5e1416dbdfc17b2620c2ca31c02e6feec042f2c1
+  Parse-iOS-SDK: 1fd9797daf2ebac19f5fc041d9015e797df1594a
+  RoutingHTTPServer: 7436429cb81c560b55557a830d51367f3107d9cc
+
+COCOAPODS: 0.27.1
