@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BA33074181B265E009D124F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA33072181B265E009D124F /* LoginViewController.m */; };
+		4BA33075181B265E009D124F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA33073181B265E009D124F /* LoginViewController.xib */; };
 		4BB7319317BAA00C009294E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319217BAA00C009294E0 /* UIKit.framework */; };
 		4BB7319517BAA00C009294E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319417BAA00C009294E0 /* Foundation.framework */; };
 		4BB7319717BAA00C009294E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319617BAA00C009294E0 /* CoreGraphics.framework */; };
@@ -24,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BA33071181B265E009D124F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4BA33072181B265E009D124F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4BA33073181B265E009D124F /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4BB7318F17BAA00C009294E0 /* SocialWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB7319217BAA00C009294E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BB7319417BAA00C009294E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +106,9 @@
 				4BB731C317BAA3B5009294E0 /* MainViewController_iPad.xib */,
 				4BB731C617BAA436009294E0 /* MainViewController_iPhone.xib */,
 				4BB7319917BAA00C009294E0 /* Supporting Files */,
+				4BA33071181B265E009D124F /* LoginViewController.h */,
+				4BA33072181B265E009D124F /* LoginViewController.m */,
+				4BA33073181B265E009D124F /* LoginViewController.xib */,
 			);
 			path = SocialWear;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA33075181B265E009D124F /* LoginViewController.xib in Resources */,
 				4BB7319D17BAA00C009294E0 /* InfoPlist.strings in Resources */,
 				4BB731A517BAA00C009294E0 /* Default.png in Resources */,
 				4BB731A717BAA00C009294E0 /* Default@2x.png in Resources */,
@@ -232,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA33074181B265E009D124F /* LoginViewController.m in Sources */,
 				4BB7319F17BAA00C009294E0 /* main.m in Sources */,
 				4BB731A317BAA00C009294E0 /* AppDelegate.m in Sources */,
 				4BB731C417BAA3B5009294E0 /* MainViewController.m in Sources */,

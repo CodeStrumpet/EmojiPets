@@ -10,9 +10,9 @@
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "RoutingHTTPServer.h"
+#import "LoginViewController.h"
 
 @interface MainViewController ()
-@property (strong, nonatomic) IBOutlet UIButton *loginLogoutButton;
 
 
 @end
@@ -32,9 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self updateLoginButton];
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
+    
+    [self presentLoginViewControllerIfNecessary];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,49 +45,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginLogoutButtonPressed:(id)sender {
-    
-    if ([PFUser currentUser] && // Check if a user is cached
-        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
-    {
-        [self logout];
-    } else {
-        [self login];
-    }
-    
-   }
-
-- (void)updateLoginButton {
-    if ([PFUser currentUser] && // Check if a user is cached
-        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
-    {
-        _loginLogoutButton.titleLabel.text = @"Logout";
-
-    } else {
-        _loginLogoutButton.titleLabel.text = @"Login";
-    }
-}
-
-- (void)login {
-    // The permissions requested from the user
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
-    
-    // Login PFUser using Facebook
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+- (void)presentLoginViewControllerIfNecessary {
+    if (![PFUser currentUser] ||
+        ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
         
-        if (!user) {
-            if (!error) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-            } else {
-                NSLog(@"Uh oh. An error occurred: %@", error);
-            }
-        } else if (user.isNew) {
-            NSLog(@"User with facebook signed up and logged in!");
-        } else {
-            NSLog(@"User with facebook logged in!");
-        }
-        [self updateLoginButton];
-    }];
+        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:Nil];
+        [self presentViewController:loginViewController animated:NO completion:^{}];
+    }
 }
 
 - (void)logout {
