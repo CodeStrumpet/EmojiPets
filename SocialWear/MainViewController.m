@@ -50,7 +50,7 @@
 }
 
 - (IBAction)getFeedPressed:(id)sender {
-    
+    // also try "me/home" & "me/statuses"...
     FBRequest * rq = [FBRequest requestWithGraphPath:@"me/feed"
                                           parameters:nil
                                           HTTPMethod:@"GET"];
