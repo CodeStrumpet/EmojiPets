@@ -35,14 +35,14 @@
 		4BA3307A181C2FEA009D124F /* FBGraphConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGraphConnection.m; sourceTree = "<group>"; };
 		4BA3307C181C3025009D124F /* FBGraphStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGraphStore.h; sourceTree = "<group>"; };
 		4BA3307D181C3025009D124F /* FBGraphStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGraphStore.m; sourceTree = "<group>"; };
-		4BB7318F17BAA00C009294E0 /* SocialWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB7318F17BAA00C009294E0 /* FacePet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacePet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB7319217BAA00C009294E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BB7319417BAA00C009294E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BB7319617BAA00C009294E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4BB7319A17BAA00C009294E0 /* SocialWear-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialWear-Info.plist"; sourceTree = "<group>"; };
+		4BB7319A17BAA00C009294E0 /* FacePet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FacePet-Info.plist"; sourceTree = "<group>"; };
 		4BB7319C17BAA00C009294E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BB7319E17BAA00C009294E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4BB731A017BAA00C009294E0 /* SocialWear-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialWear-Prefix.pch"; sourceTree = "<group>"; };
+		4BB731A017BAA00C009294E0 /* FacePet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacePet-Prefix.pch"; sourceTree = "<group>"; };
 		4BB731A117BAA00C009294E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BB731A217BAA00C009294E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4BB731A417BAA00C009294E0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		4BB7318617BAA00C009294E0 = {
 			isa = PBXGroup;
 			children = (
-				4BB7319817BAA00C009294E0 /* SocialWear */,
+				4BB7319817BAA00C009294E0 /* FacePet */,
 				4BB7319117BAA00C009294E0 /* Frameworks */,
 				4BB7319017BAA00C009294E0 /* Products */,
 				813496D5B8AE4587AE0DC804 /* Pods.xcconfig */,
@@ -85,7 +85,7 @@
 		4BB7319017BAA00C009294E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BB7318F17BAA00C009294E0 /* SocialWear.app */,
+				4BB7318F17BAA00C009294E0 /* FacePet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +101,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4BB7319817BAA00C009294E0 /* SocialWear */ = {
+		4BB7319817BAA00C009294E0 /* FacePet */ = {
 			isa = PBXGroup;
 			children = (
 				4BB731C917BAA8AF009294E0 /* html */,
@@ -120,16 +120,16 @@
 				4BA3307C181C3025009D124F /* FBGraphStore.h */,
 				4BA3307D181C3025009D124F /* FBGraphStore.m */,
 			);
-			path = SocialWear;
+			path = FacePet;
 			sourceTree = "<group>";
 		};
 		4BB7319917BAA00C009294E0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4BB7319A17BAA00C009294E0 /* SocialWear-Info.plist */,
+				4BB7319A17BAA00C009294E0 /* FacePet-Info.plist */,
 				4BB7319B17BAA00C009294E0 /* InfoPlist.strings */,
 				4BB7319E17BAA00C009294E0 /* main.m */,
-				4BB731A017BAA00C009294E0 /* SocialWear-Prefix.pch */,
+				4BB731A017BAA00C009294E0 /* FacePet-Prefix.pch */,
 				4BB731A417BAA00C009294E0 /* Default.png */,
 				4BB731A617BAA00C009294E0 /* Default@2x.png */,
 				4BB731A817BAA00C009294E0 /* Default-568h@2x.png */,
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4BB7318E17BAA00C009294E0 /* SocialWear */ = {
+		4BB7318E17BAA00C009294E0 /* FacePet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4BB731BE17BAA00C009294E0 /* Build configuration list for PBXNativeTarget "SocialWear" */;
+			buildConfigurationList = 4BB731BE17BAA00C009294E0 /* Build configuration list for PBXNativeTarget "FacePet" */;
 			buildPhases = (
 				41209E27619C456EAC3468C5 /* Check Pods Manifest.lock */,
 				4BB7318B17BAA00C009294E0 /* Sources */,
@@ -154,9 +154,9 @@
 			);
 			dependencies = (
 			);
-			name = SocialWear;
+			name = FacePet;
 			productName = "http-bridge-webview-native";
-			productReference = 4BB7318F17BAA00C009294E0 /* SocialWear.app */;
+			productReference = 4BB7318F17BAA00C009294E0 /* FacePet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +178,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4BB7318A17BAA00C009294E0 /* Build configuration list for PBXProject "SocialWear" */;
+			buildConfigurationList = 4BB7318A17BAA00C009294E0 /* Build configuration list for PBXProject "FacePet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -190,7 +190,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4BB7318E17BAA00C009294E0 /* SocialWear */,
+				4BB7318E17BAA00C009294E0 /* FacePet */,
 			);
 		};
 /* End PBXProject section */
@@ -338,9 +338,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SocialWear/SocialWear-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/SocialWear/SocialWear-Info.plist";
-				PRODUCT_NAME = SocialWear;
+				GCC_PREFIX_HEADER = "SocialWear/FacePet-Prefix.pch";
+				INFOPLIST_FILE = "SocialWear/FacePet-Info.plist";
+				PRODUCT_NAME = FacePet;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -351,9 +351,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SocialWear/SocialWear-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/SocialWear/SocialWear-Info.plist";
-				PRODUCT_NAME = SocialWear;
+				GCC_PREFIX_HEADER = "SocialWear/FacePet-Prefix.pch";
+				INFOPLIST_FILE = "SocialWear/FacePet-Info.plist";
+				PRODUCT_NAME = FacePet;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -361,7 +361,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4BB7318A17BAA00C009294E0 /* Build configuration list for PBXProject "SocialWear" */ = {
+		4BB7318A17BAA00C009294E0 /* Build configuration list for PBXProject "FacePet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4BB731BC17BAA00C009294E0 /* Debug */,
@@ -370,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4BB731BE17BAA00C009294E0 /* Build configuration list for PBXNativeTarget "SocialWear" */ = {
+		4BB731BE17BAA00C009294E0 /* Build configuration list for PBXNativeTarget "FacePet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4BB731BF17BAA00C009294E0 /* Debug */,
