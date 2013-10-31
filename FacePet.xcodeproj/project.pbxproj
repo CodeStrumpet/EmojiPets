@@ -338,8 +338,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SocialWear/FacePet-Prefix.pch";
-				INFOPLIST_FILE = "SocialWear/FacePet-Info.plist";
+				GCC_PREFIX_HEADER = "FacePet/FacePet-Prefix.pch";
+				INFOPLIST_FILE = "FacePet/FacePet-Info.plist";
 				PRODUCT_NAME = FacePet;
 				WRAPPER_EXTENSION = app;
 			};
@@ -351,8 +351,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SocialWear/FacePet-Prefix.pch";
-				INFOPLIST_FILE = "SocialWear/FacePet-Info.plist";
+				GCC_PREFIX_HEADER = "FacePet/FacePet-Prefix.pch";
+				INFOPLIST_FILE = "FacePet/FacePet-Info.plist";
 				PRODUCT_NAME = FacePet;
 				WRAPPER_EXTENSION = app;
 			};
