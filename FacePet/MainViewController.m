@@ -14,11 +14,23 @@
 #import "FBGraphStore.h"
 #import "RoutingHTTPServer.h"
 #import "LoginViewController.h"
+#import "FBDiff.h"
+
+typedef enum FBUpdateState {
+    UpdateStateNone = 0x0,
+    UpdateStateFeed = 0x1,
+    UpdateStateStatuses = 0x2,
+    UpdateStateBoth = 0x3
+} FBUpdateState;
+
 
 @interface MainViewController ()
 
 @property (nonatomic, strong) FBGraphConnection *graphConnection;
 @property (nonatomic, strong) FBGraphStore *graphStore;
+@property (nonatomic, strong) FBDiff *feedDiff;
+@property (nonatomic, strong) FBDiff *statusesDiff;
+@property (nonatomic, assign) FBUpdateState currUpdateState;
 
 @end
 
@@ -34,6 +46,12 @@
     return self;
 }
 
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,6 +64,8 @@
     _graphStore = [[FBGraphStore alloc] init];
     
     [self presentLoginViewControllerIfNecessary];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGraphReturned:) name:GRAPH_UPDATE_NOTIFICATION object:nil];
 }
 
 - (void)presentLoginViewControllerIfNecessary {
@@ -59,8 +79,31 @@
 
 - (IBAction)getFeedPressed:(id)sender {
     
+    _currUpdateState = UpdateStateNone;
     [_graphConnection updateGraphStore:_graphStore withCall:GraphCallFeed];
+    [_graphConnection updateGraphStore:_graphStore withCall:GraphCallStatuses];
     
+}
+
+- (void)updateGraphReturned:(NSNotification *)notification {
+    FBDiff *diff = [notification.userInfo objectForKey:FB_DIFF_KEY];
+    
+    if (diff) {
+        if (diff.graphCall == GraphCallFeed) {
+            _currUpdateState |= UpdateStateFeed;
+            _feedDiff = diff;
+            NSLog(@"Feed diff finished");
+        } else if (diff.graphCall == GraphCallStatuses) {
+            _currUpdateState |= UpdateStateStatuses;
+            _statusesDiff = diff;
+            NSLog(@"Statuses diff finished");
+        }
+    }
+    
+    
+    if (_currUpdateState == UpdateStateBoth) {
+        NSLog(@"All diffs finished %d", _currUpdateState);
+    }
 }
 
 - (void)logout {

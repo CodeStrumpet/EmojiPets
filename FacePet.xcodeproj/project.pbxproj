@@ -25,6 +25,8 @@
 		4BB731C717BAA436009294E0 /* MainViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BB731C617BAA436009294E0 /* MainViewController_iPhone.xib */; };
 		4BB731CA17BAA8AF009294E0 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 4BB731C917BAA8AF009294E0 /* html */; };
 		4BFF377B1824068A00D00ADA /* NetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF377A1824068A00D00ADA /* NetworkUtils.m */; };
+		4BFF377E182611A900D00ADA /* FBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF377D182611A900D00ADA /* FBPost.m */; };
+		4BFF378118261C8900D00ADA /* FBDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF378018261C8900D00ADA /* FBDiff.m */; };
 		F78A3FAA4C5E4F0780D81697 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 541841D4BBC143558A0040C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,11 @@
 		4BB731C917BAA8AF009294E0 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		4BFF37791824068A00D00ADA /* NetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtils.h; sourceTree = "<group>"; };
 		4BFF377A1824068A00D00ADA /* NetworkUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtils.m; sourceTree = "<group>"; };
+		4BFF377C182611A900D00ADA /* FBPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBPost.h; sourceTree = "<group>"; };
+		4BFF377D182611A900D00ADA /* FBPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBPost.m; sourceTree = "<group>"; };
+		4BFF377F18261C8900D00ADA /* FBDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDiff.h; sourceTree = "<group>"; };
+		4BFF378018261C8900D00ADA /* FBDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDiff.m; sourceTree = "<group>"; };
+		4BFF378218261D6B00D00ADA /* FacePetConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePetConstants.h; sourceTree = "<group>"; };
 		541841D4BBC143558A0040C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		813496D5B8AE4587AE0DC804 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -124,6 +131,11 @@
 				4BA3307D181C3025009D124F /* FBGraphStore.m */,
 				4BFF37791824068A00D00ADA /* NetworkUtils.h */,
 				4BFF377A1824068A00D00ADA /* NetworkUtils.m */,
+				4BFF377C182611A900D00ADA /* FBPost.h */,
+				4BFF377D182611A900D00ADA /* FBPost.m */,
+				4BFF377F18261C8900D00ADA /* FBDiff.h */,
+				4BFF378018261C8900D00ADA /* FBDiff.m */,
+				4BFF378218261D6B00D00ADA /* FacePetConstants.h */,
 			);
 			path = FacePet;
 			sourceTree = "<group>";
@@ -257,9 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BA33074181B265E009D124F /* LoginViewController.m in Sources */,
+				4BFF377E182611A900D00ADA /* FBPost.m in Sources */,
 				4BFF377B1824068A00D00ADA /* NetworkUtils.m in Sources */,
 				4BB7319F17BAA00C009294E0 /* main.m in Sources */,
 				4BB731A317BAA00C009294E0 /* AppDelegate.m in Sources */,
+				4BFF378118261C8900D00ADA /* FBDiff.m in Sources */,
 				4BB731C417BAA3B5009294E0 /* MainViewController.m in Sources */,
 				4BA3307E181C3025009D124F /* FBGraphStore.m in Sources */,
 				4BA3307B181C2FEA009D124F /* FBGraphConnection.m in Sources */,

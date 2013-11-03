@@ -10,12 +10,6 @@
 
 @class FBGraphStore;
 
-typedef enum GraphCall {
-    GraphCallHome,
-    GraphCallFeed,
-    GraphCallStatuses
-} GraphCall;
-
 @interface FBGraphConnection : NSObject
 
 - (void)listenForRealtimeUpdates;
