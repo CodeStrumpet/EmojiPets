@@ -20,7 +20,10 @@
 
 - (id)init {
     if ((self = [super init])) {
-        _store = [[NSMutableDictionary alloc] init];
+        _store = [NSKeyedUnarchiver unarchiveObjectWithFile:[self storeArchivePath]];
+        if (!_store) {
+            _store = [[NSMutableDictionary alloc] init];
+        }
     }
     return self;
 }
@@ -61,12 +64,16 @@
     
     NSLog(@"newPosts: %d, newLikes: %d, newComments: %d", diff.newPosts, diff.newLikes, diff.newComments);
     
-    if (NO) {
-        [self writeDictionaryAsJSON:results toFile:@"graphResults.json"];
-    }
+    // write the store to the file system
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [self persistStoreToArchive];
+        
+        if (NO) {
+            [self writeDictionaryAsJSON:results toFile:@"graphResults.json"];
+        }
+    });
+    
 }
-
-
 
 - (FBPost *)postForFeedItem:(NSDictionary *)feedItem {
     FBPost *post = [FBPost new];
@@ -81,6 +88,16 @@
         post.numComments = [comments count];
     }
     return post;
+}
+
+- (BOOL)persistStoreToArchive {
+    return [NSKeyedArchiver archiveRootObject:_store toFile:[self storeArchivePath]];
+}
+
+- (NSString *)storeArchivePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    return [documentsDir stringByAppendingPathComponent:@"graphStore"];
 }
 
 - (void)writeDictionaryAsJSON:(NSDictionary *)results toFile:(NSString *)fileName {
@@ -100,6 +117,9 @@
         
         NSError *error;
         [jsonString writeToFile:documentDBFolderPath atomically:NO encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            NSLog(@"Error: %@", error);
+        }
     }
 
 }

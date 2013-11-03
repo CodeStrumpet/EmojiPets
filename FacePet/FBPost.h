@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBPost : NSObject
+@interface FBPost : NSObject <NSCoding>
 
 @property (nonatomic, assign) int numLikes;
 @property (nonatomic, assign) int numComments;

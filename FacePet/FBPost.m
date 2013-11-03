@@ -18,4 +18,20 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    
+    _numLikes = [aDecoder decodeIntegerForKey:@"numLikes"];
+    _numComments = [aDecoder decodeIntegerForKey:@"numComments"];
+
+    return self;
+}
+
+
+-(void)encodeWithCoder:(NSCoder *)aCoder {
+
+    [aCoder encodeInteger:_numLikes forKey:@"numLikes"];
+    [aCoder encodeInteger:_numComments forKey:@"numComments"];
+}
+
 @end
