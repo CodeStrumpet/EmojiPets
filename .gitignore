@@ -33,3 +33,5 @@ Pods/*
 #CocoaPods
 Pods
 
+#Pebble App
+/Watch/*
