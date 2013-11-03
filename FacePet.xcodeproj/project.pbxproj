@@ -27,6 +27,13 @@
 		4BFF377B1824068A00D00ADA /* NetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF377A1824068A00D00ADA /* NetworkUtils.m */; };
 		4BFF377E182611A900D00ADA /* FBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF377D182611A900D00ADA /* FBPost.m */; };
 		4BFF378118261C8900D00ADA /* FBDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF378018261C8900D00ADA /* FBDiff.m */; };
+		4BFF3784182638B900D00ADA /* PebbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF3783182638B900D00ADA /* PebbleKit.framework */; };
+		4BFF37881826390500D00ADA /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF37871826390500D00ADA /* ExternalAccessory.framework */; };
+		4BFF378A1826391B00D00ADA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF37891826391B00D00ADA /* libz.dylib */; };
+		4BFF378C1826392200D00ADA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF378B1826392200D00ADA /* CoreBluetooth.framework */; };
+		4BFF378E1826393500D00ADA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF378D1826393500D00ADA /* CoreMotion.framework */; };
+		4BFF37901826393D00D00ADA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF378F1826393D00D00ADA /* MessageUI.framework */; };
+		4BFF379218263A9000D00ADA /* PebbleVendor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF379118263A9000D00ADA /* PebbleVendor.framework */; };
 		F78A3FAA4C5E4F0780D81697 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 541841D4BBC143558A0040C8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +70,13 @@
 		4BFF377F18261C8900D00ADA /* FBDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDiff.h; sourceTree = "<group>"; };
 		4BFF378018261C8900D00ADA /* FBDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDiff.m; sourceTree = "<group>"; };
 		4BFF378218261D6B00D00ADA /* FacePetConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacePetConstants.h; sourceTree = "<group>"; };
+		4BFF3783182638B900D00ADA /* PebbleKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleKit.framework; sourceTree = "<group>"; };
+		4BFF37871826390500D00ADA /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		4BFF37891826391B00D00ADA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4BFF378B1826392200D00ADA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		4BFF378D1826393500D00ADA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		4BFF378F1826393D00D00ADA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4BFF379118263A9000D00ADA /* PebbleVendor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PebbleVendor.framework; sourceTree = "<group>"; };
 		541841D4BBC143558A0040C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		813496D5B8AE4587AE0DC804 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -72,9 +86,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFF37901826393D00D00ADA /* MessageUI.framework in Frameworks */,
+				4BFF378E1826393500D00ADA /* CoreMotion.framework in Frameworks */,
+				4BFF378C1826392200D00ADA /* CoreBluetooth.framework in Frameworks */,
+				4BFF378A1826391B00D00ADA /* libz.dylib in Frameworks */,
+				4BFF37881826390500D00ADA /* ExternalAccessory.framework in Frameworks */,
 				4BB7319317BAA00C009294E0 /* UIKit.framework in Frameworks */,
 				4BB7319517BAA00C009294E0 /* Foundation.framework in Frameworks */,
+				4BFF379218263A9000D00ADA /* PebbleVendor.framework in Frameworks */,
 				4BB7319717BAA00C009294E0 /* CoreGraphics.framework in Frameworks */,
+				4BFF3784182638B900D00ADA /* PebbleKit.framework in Frameworks */,
 				F78A3FAA4C5E4F0780D81697 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +124,13 @@
 		4BB7319117BAA00C009294E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BFF379118263A9000D00ADA /* PebbleVendor.framework */,
+				4BFF378F1826393D00D00ADA /* MessageUI.framework */,
+				4BFF378D1826393500D00ADA /* CoreMotion.framework */,
+				4BFF378B1826392200D00ADA /* CoreBluetooth.framework */,
+				4BFF37891826391B00D00ADA /* libz.dylib */,
+				4BFF37871826390500D00ADA /* ExternalAccessory.framework */,
+				4BFF3783182638B900D00ADA /* PebbleKit.framework */,
 				4BB7319217BAA00C009294E0 /* UIKit.framework */,
 				4BB7319417BAA00C009294E0 /* Foundation.framework */,
 				4BB7319617BAA00C009294E0 /* CoreGraphics.framework */,
@@ -357,6 +385,10 @@
 			baseConfigurationReference = 813496D5B8AE4587AE0DC804 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/rockfakie/Code/FacePet,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacePet/FacePet-Prefix.pch";
 				INFOPLIST_FILE = "FacePet/FacePet-Info.plist";
@@ -370,6 +402,10 @@
 			baseConfigurationReference = 813496D5B8AE4587AE0DC804 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/rockfakie/Code/FacePet,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacePet/FacePet-Prefix.pch";
 				INFOPLIST_FILE = "FacePet/FacePet-Info.plist";
