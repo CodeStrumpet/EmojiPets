@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "RoutingHTTPServer.h"
+#import "NetworkUtils.h"
 #import <Parse/Parse.h>
 
 
@@ -35,7 +36,7 @@
     
     // kick things off by starting the local http server
     _httpServer = [[RoutingHTTPServer alloc] init];
-    [_httpServer setPort:59123];
+    [_httpServer setPort:12345];
     [_httpServer setDefaultHeader:@"Server" value:@"rockfakie/1.0"];
     
     NSError *error = nil;

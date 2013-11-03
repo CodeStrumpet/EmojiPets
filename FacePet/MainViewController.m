@@ -41,6 +41,8 @@
     [self.navigationController setNavigationBarHidden:NO];
     
     _graphConnection = [[FBGraphConnection alloc] init];
+    [_graphConnection listenForRealtimeUpdates];
+    
     _graphStore = [[FBGraphStore alloc] init];
     
     [self presentLoginViewControllerIfNecessary];

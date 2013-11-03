@@ -13,7 +13,8 @@
 - (void)updateWithGraphResults:(NSDictionary *)results graphCall:(GraphCall)graphCall {
     NSArray *data = [results objectForKey:@"data"];
     for (NSDictionary *feedItem in data) {
-        NSLog(@"From: %@", [feedItem objectForKey:@"from"]);
+        NSLog(@"FeedItem: %@", feedItem);
+        //NSLog(@"From: %@", [feedItem objectForKey:@"from"]);
     }
 }
 

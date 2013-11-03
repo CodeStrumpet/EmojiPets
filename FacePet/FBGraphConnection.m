@@ -7,10 +7,32 @@
 //
 
 #import "FBGraphConnection.h"
+#import "AppDelegate.h"
+#import "NetworkUtils.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "FBGraphStore.h"
+#import <RoutingHTTPServer/RoutingHTTPServer.h>
 
 @implementation FBGraphConnection
+
+- (void)listenForRealtimeUpdates {
+    RoutingHTTPServer *http = [[AppDelegate instance] httpServer];
+    
+    [http get:@"/userUpdate" withBlock:^(RouteRequest *request, RouteResponse *response) {
+        [response setHeader:@"Content-Type" value:@"text/plain"];
+        
+        NSLog(@"Request: %@", request);
+        
+        //[response respondWithString:[NSString stringWithFormat:@"Hello %@!", [request param:@"name"]]];
+    }];
+    
+    NSString *ipAddress = [NetworkUtils getIPAddress:YES preferCellular:YES];
+    
+    //"192.168.0.118:59123/userUpdate"
+    
+    NSLog(@"ipAddress: %@", ipAddress);
+    
+}
 
 - (void)updateGraphStore:(FBGraphStore *)graphStore withCall:(GraphCall)graphCall {
     
