@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "RoutingHTTPServer.h"
 #import "NetworkUtils.h"
 #import <Parse/Parse.h>
 
@@ -28,24 +27,7 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     [PFFacebookUtils initializeFacebook];
-    
-    // Configure our logging framework.
-	// To keep things simple and fast, we're just going to log to the Xcode console.
-	[DDLog addLogger:[DDTTYLogger sharedInstance]];
-    
-    
-    // kick things off by starting the local http server
-    _httpServer = [[RoutingHTTPServer alloc] init];
-    [_httpServer setPort:12345];
-    [_httpServer setDefaultHeader:@"Server" value:@"rockfakie/1.0"];
-    
-    NSError *error = nil;
-    if([_httpServer start:&error]) {
-		DDLogInfo(@"Started HTTP Server on port %hu", [_httpServer listeningPort]);
-	} else {
-		DDLogError(@"Error starting HTTP Server: %@", error);
-	}
-
+        
     // copy html files in bundle to documents directory
     [self copyBundleDirectoryToDocuments:@"html"];
     

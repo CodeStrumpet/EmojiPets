@@ -12,7 +12,6 @@
 
 @interface FBGraphConnection : NSObject
 
-- (void)listenForRealtimeUpdates;
 - (void)updateGraphStore:(FBGraphStore *)graphStore withCall:(GraphCall)graphCall;
 
 

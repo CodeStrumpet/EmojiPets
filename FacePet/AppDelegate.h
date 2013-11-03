@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class RoutingHTTPServer;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -17,8 +15,6 @@
 @property (strong, nonatomic) UINavigationController *navigationController;
 
 @property (strong, nonatomic) UISplitViewController *splitViewController;
-
-@property (strong, nonatomic) RoutingHTTPServer *httpServer;
 
 + (AppDelegate *)instance;
 

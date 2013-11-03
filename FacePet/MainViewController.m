@@ -12,7 +12,6 @@
 #import "AppDelegate.h"
 #import "FBGraphConnection.h"
 #import "FBGraphStore.h"
-#import "RoutingHTTPServer.h"
 #import "LoginViewController.h"
 #import "FBDiff.h"
 
@@ -59,7 +58,6 @@ typedef enum FBUpdateState {
     [self.navigationController setNavigationBarHidden:NO];
     
     _graphConnection = [[FBGraphConnection alloc] init];
-    [_graphConnection listenForRealtimeUpdates];
     
     _graphStore = [[FBGraphStore alloc] init];
     

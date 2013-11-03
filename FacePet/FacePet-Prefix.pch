@@ -11,9 +11,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import "DDLog.h"
-    #import "DDTTYLogger.h"
     #import "FacePetConstants.h"
 
-    static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif
