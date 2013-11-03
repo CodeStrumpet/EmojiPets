@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <PebbleKit/PebbleKit.h>
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "FBGraphConnection.h"
@@ -81,6 +82,28 @@ typedef enum FBUpdateState {
     [_graphConnection updateGraphStore:_graphStore withCall:GraphCallFeed];
     [_graphConnection updateGraphStore:_graphStore withCall:GraphCallStatuses];
     
+}
+
+- (IBAction)callWatchPressed:(id)sender {
+    
+    
+    // Send data to watch:
+    // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definitions on the watch's end:
+    NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
+    NSNumber *temperatureKey = @(1); // This is our custom-defined key for the temperature string.
+    NSDictionary *update = @{ iconKey:[NSNumber numberWithUint8:1],
+                              temperatureKey:[NSString stringWithFormat:@"%d\u00B0C", 55] };
+    
+    [[AppDelegate instance].targetWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"Success!");
+        }
+
+    }];
+
 }
 
 - (void)updateGraphReturned:(NSNotification *)notification {

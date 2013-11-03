@@ -48,6 +48,12 @@
     }
     [self.window makeKeyAndVisible];
     
+    
+    // We'd like to get called when Pebbles connect and disconnect, so become the delegate of PBPebbleCentral:
+    [[PBPebbleCentral defaultCentral] setDelegate:self];
+    
+    // Initialize with the last connected watch:
+    [self setTargetWatch:[[PBPebbleCentral defaultCentral] lastConnectedWatch]];
         
     return YES;
 }
@@ -89,6 +95,35 @@
     return [PFFacebookUtils handleOpenURL:url];
 }
 
+- (void)setTargetWatch:(PBWatch*)watch {
+    _targetWatch = watch;
+    
+    // NOTE:
+    // For demonstration purposes, we start communicating with the watch immediately upon connection,
+    // because we are calling -appMessagesGetIsSupported: here, which implicitely opens the communication session.
+    // Real world apps should communicate only if the user is actively using the app, because there
+    // is one communication session that is shared between all 3rd party iOS apps.
+    
+    // Test if the Pebble's firmware supports AppMessages / Weather:
+    [watch appMessagesGetIsSupported:^(PBWatch *watch, BOOL isAppMessagesSupported) {
+        if (isAppMessagesSupported) {
+            // Configure our communications channel to target the weather app:
+            // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definition on the watch's end:
+            uint8_t bytes[] = {0x42, 0xc8, 0x6e, 0xa4, 0x1c, 0x3e, 0x4a, 0x07, 0xb8, 0x89, 0x2c, 0xcc, 0xca, 0x91, 0x41, 0x98};
+            NSData *uuid = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+            [watch appMessagesSetUUID:uuid];
+            
+            NSString *message = [NSString stringWithFormat:@"Yay! %@ supports AppMessages :D", [watch name]];
+            [[[UIAlertView alloc] initWithTitle:@"Connected!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        } else {
+            
+            NSString *message = [NSString stringWithFormat:@"Blegh... %@ does NOT support AppMessages :'(", [watch name]];
+            [[[UIAlertView alloc] initWithTitle:@"Connected..." message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+    }];
+}
+
+
 
 -(void)copyBundleDirectoryToDocuments:(NSString *)directory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -109,6 +144,20 @@
         
     } else {
         NSLog(@"Directory already exists! %@", documentDBFolderPath);
+    }
+}
+
+
+#pragma mark - PebbleCentralDelegate
+
+- (void)pebbleCentral:(PBPebbleCentral*)central watchDidConnect:(PBWatch*)watch isNew:(BOOL)isNew {
+    [self setTargetWatch:watch];
+}
+
+- (void)pebbleCentral:(PBPebbleCentral*)central watchDidDisconnect:(PBWatch*)watch {
+    [[[UIAlertView alloc] initWithTitle:@"Disconnected!" message:[watch name] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    if (_targetWatch == watch || [watch isEqual:_targetWatch]) {
+        [self setTargetWatch:nil];
     }
 }
 
