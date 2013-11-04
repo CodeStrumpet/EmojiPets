@@ -57,6 +57,12 @@ static void load_bitmap(uint32_t resource_id) {
   s_data.current_icon = resource_id;
   // Load the new icon
   heap_bitmap_init(&s_data.icon_bitmap, resource_id);
+
+  layer_mark_dirty(&(s_data.icon_layer.layer));
+    
+  light_enable_interaction();
+    
+  vibes_short_pulse();
 }
 
 // TODO: Error handling
