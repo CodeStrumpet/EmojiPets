@@ -102,7 +102,7 @@ static void weather_app_init(AppContextRef c) {
   //layer_add_child(&window->layer, &s_data.temperature_layer.layer);
 
   Tuplet initial_values[] = {
-    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 9),
+    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 0),
     TupletCString(WEATHER_TEMPERATURE_KEY, "1234\u00B0C"),
   };
   app_sync_init(&s_data.sync, s_data.sync_buffer, sizeof(s_data.sync_buffer), initial_values, ARRAY_LENGTH(initial_values),
