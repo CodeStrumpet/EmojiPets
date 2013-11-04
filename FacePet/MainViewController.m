@@ -31,6 +31,7 @@ typedef enum FBUpdateState {
 @property (nonatomic, strong) FBDiff *feedDiff;
 @property (nonatomic, strong) FBDiff *statusesDiff;
 @property (nonatomic, assign) FBUpdateState currUpdateState;
+@property (strong, nonatomic) IBOutlet UISlider *slider;
 
 @end
 
@@ -104,6 +105,36 @@ typedef enum FBUpdateState {
 
     }];
 
+}
+
+- (void)updateWatchImage:(int)imageNum {
+    
+    // Send data to watch:
+    // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definitions on the watch's end:
+    NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
+    NSNumber *temperatureKey = @(1); // This is our custom-defined key for the temperature string.
+    NSDictionary *update = @{ iconKey:[NSNumber numberWithUint8:imageNum],
+                              temperatureKey:[NSString stringWithFormat:@"%d\u00B0C", 55] };
+    
+    [[AppDelegate instance].targetWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"Success!");
+        }
+        
+    }];
+}
+
+- (IBAction)sliderChanged:(id)sender {
+    int sliderValue;
+    sliderValue = lroundf(_slider.value);
+    [_slider setValue:sliderValue animated:YES];
+    
+    NSLog(@"new slider value: %d", (int)_slider.value);
+    
+    [self updateWatchImage:(int)_slider.value];
 }
 
 - (void)updateGraphReturned:(NSNotification *)notification {

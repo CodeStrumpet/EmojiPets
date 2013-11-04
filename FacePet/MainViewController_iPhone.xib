@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="slider" destination="ZVx-bk-Rde" id="rGl-Fh-qk9"/>
                 <outlet property="view" destination="2" id="8"/>
             </connections>
         </placeholder>
@@ -35,6 +36,13 @@
                         <action selector="callWatchPressed:" destination="-1" eventType="touchUpInside" id="GrN-im-eOd"/>
                     </connections>
                 </button>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="11" id="ZVx-bk-Rde">
+                    <rect key="frame" x="18" y="392" width="284" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="sliderChanged:" destination="-1" eventType="touchUpInside" id="ZDF-9i-Cv9"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
