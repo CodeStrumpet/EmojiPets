@@ -2,25 +2,65 @@
     "friendlyVersion": "1.0", 
     "media": [
         {
-            "defName": "IMAGE_SUN", 
-            "file": "img/sun.png", 
+            "defName": "IMAGE_ANGRY",
+            "file": "img/angry.png",
             "type": "png"
-        }, 
+        },
         {
-            "defName": "IMAGE_RAIN", 
-            "file": "img/rain.png", 
+            "defName": "IMAGE_DEAD",
+            "file": "img/dead.png",
             "type": "png"
-        }, 
+        },
         {
-            "defName": "IMAGE_CLOUD", 
-            "file": "img/cloud.png", 
+            "defName": "IMAGE_HAPPY",
+            "file": "img/happy.png",
             "type": "png"
-        }, 
+        },
         {
-            "defName": "IMAGE_SNOW", 
-            "file": "img/snow.png", 
+            "defName": "IMAGE_HAPPY_WINK",
+            "file": "img/happy_wink.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_LUV_EYES",
+            "file": "img/luv_eyes.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_NEUTRAL",
+            "file": "img/neutral.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_NEUTRAL_WINK",
+            "file": "img/neutral_wink.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SAD",
+            "file": "img/sad.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SAD_WINK",
+            "file": "img/sad_wink.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SMOOCH",
+            "file": "img/smooch.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SURPRISED",
+            "file": "img/surprised.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SURPRISED_WINK",
+            "file": "img/surprised_wink.png",
             "type": "png"
         }
     ], 
-    "versionDefName": "WEATHER_APP_RESOURCES"
+    "versionDefName": "FACEPET_APP_RESOURCES"
 }
