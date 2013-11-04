@@ -109,7 +109,7 @@
         if (isAppMessagesSupported) {
             // Configure our communications channel to target the weather app:
             // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definition on the watch's end:
-            uint8_t bytes[] = {0x42, 0xc8, 0x6e, 0xa4, 0x1c, 0x3e, 0x4a, 0x07, 0xb8, 0x89, 0x2c, 0xcc, 0xca, 0x91, 0x41, 0x98};
+            uint8_t bytes[] = {0xB2, 0xF9, 0xE6, 0x12, 0x68, 0x71, 0x45, 0x1C, 0xB2, 0x3B, 0x2C, 0x93, 0x32, 0xCD, 0x51, 0x27};
             NSData *uuid = [NSData dataWithBytes:bytes length:sizeof(bytes)];
             [watch appMessagesSetUUID:uuid];
             

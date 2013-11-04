@@ -36,7 +36,7 @@
                         <action selector="callWatchPressed:" destination="-1" eventType="touchUpInside" id="GrN-im-eOd"/>
                     </connections>
                 </button>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="11" id="ZVx-bk-Rde">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="11" id="ZVx-bk-Rde">
                     <rect key="frame" x="18" y="392" width="284" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
