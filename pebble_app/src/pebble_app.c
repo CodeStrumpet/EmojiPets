@@ -29,11 +29,19 @@ enum {
   WEATHER_TEMPERATURE_KEY = 0x1,  // TUPLE_CSTRING
 };
 
-static uint32_t WEATHER_ICONS[] = {
-  RESOURCE_ID_IMAGE_SUN,
-  RESOURCE_ID_IMAGE_CLOUD,
-  RESOURCE_ID_IMAGE_RAIN,
-  RESOURCE_ID_IMAGE_SNOW
+static uint32_t PET_FACES[] = {
+    RESOURCE_ID_IMAGE_ANGRY,
+    RESOURCE_ID_IMAGE_DEAD,
+    RESOURCE_ID_IMAGE_HAPPY,
+    RESOURCE_ID_IMAGE_HAPPY_WINK,
+    RESOURCE_ID_IMAGE_LUV_EYES,
+    RESOURCE_ID_IMAGE_NEUTRAL,
+    RESOURCE_ID_IMAGE_NEUTRAL_WINK,
+    RESOURCE_ID_IMAGE_SAD,
+    RESOURCE_ID_IMAGE_SAD_WINK,
+    RESOURCE_ID_IMAGE_SMOOCH,
+    RESOURCE_ID_IMAGE_SURPRISED,
+    RESOURCE_ID_IMAGE_SURPRISED_WINK,
 };
 
 static void load_bitmap(uint32_t resource_id) {
@@ -59,12 +67,12 @@ static void sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tup
 
   switch (key) {
   case WEATHER_ICON_KEY:
-    load_bitmap(WEATHER_ICONS[new_tuple->value->uint8]);
+    load_bitmap(PET_FACES[new_tuple->value->uint8]);
     bitmap_layer_set_bitmap(&s_data.icon_layer, &s_data.icon_bitmap.bmp);
     break;
   case WEATHER_TEMPERATURE_KEY:
     // App Sync keeps the new_tuple around, so we may use it directly
-    text_layer_set_text(&s_data.temperature_layer, new_tuple->value->cstring);
+    //text_layer_set_text(&s_data.temperature_layer, new_tuple->value->cstring);
     break;
   default:
     return;
@@ -75,26 +83,26 @@ static void weather_app_init(AppContextRef c) {
 
   s_data.current_icon = 0;
 
-  resource_init_current_app(&WEATHER_APP_RESOURCES);
+  resource_init_current_app(&FACEPET_APP_RESOURCES);
 
   Window* window = &s_data.window;
   window_init(window, "Weather");
   window_set_background_color(window, GColorBlack);
   window_set_fullscreen(window, true);
 
-  GRect icon_rect = (GRect) {(GPoint) {32, 10}, (GSize) { 80, 80 }};
+  GRect icon_rect = (GRect) {(GPoint) {0, 0}, (GSize) { 144, 168 }};
   bitmap_layer_init(&s_data.icon_layer, icon_rect);
   layer_add_child(&window->layer, &s_data.icon_layer.layer);
 
-  text_layer_init(&s_data.temperature_layer, GRect(0, 100, 144, 68));
-  text_layer_set_text_color(&s_data.temperature_layer, GColorWhite);
-  text_layer_set_background_color(&s_data.temperature_layer, GColorClear);
-  text_layer_set_font(&s_data.temperature_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
-  text_layer_set_text_alignment(&s_data.temperature_layer, GTextAlignmentCenter);
-  layer_add_child(&window->layer, &s_data.temperature_layer.layer);
+  //text_layer_init(&s_data.temperature_layer, GRect(0, 100, 144, 68));
+  //text_layer_set_text_color(&s_data.temperature_layer, GColorWhite);
+  //text_layer_set_background_color(&s_data.temperature_layer, GColorClear);
+  //text_layer_set_font(&s_data.temperature_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  //text_layer_set_text_alignment(&s_data.temperature_layer, GTextAlignmentCenter);
+  //layer_add_child(&window->layer, &s_data.temperature_layer.layer);
 
   Tuplet initial_values[] = {
-    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 3),
+    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 9),
     TupletCString(WEATHER_TEMPERATURE_KEY, "1234\u00B0C"),
   };
   app_sync_init(&s_data.sync, s_data.sync_buffer, sizeof(s_data.sync_buffer), initial_values, ARRAY_LENGTH(initial_values),
