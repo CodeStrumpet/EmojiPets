@@ -52,6 +52,9 @@
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="emojiFramePressed:" destination="-1" eventType="touchUpInside" id="VTY-qJ-v3t"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dR0-G4-nYN">
                     <rect key="frame" x="108" y="113" width="104" height="82"/>

@@ -15,6 +15,7 @@
 #import "FBGraphStore.h"
 #import "LoginViewController.h"
 #import "FBDiff.h"
+#import "PetSelectorViewController.h"
 
 typedef enum FBUpdateState {
     UpdateStateNone = 0x0,
@@ -69,6 +70,11 @@ typedef enum FBUpdateState {
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGraphReturned:) name:GRAPH_UPDATE_NOTIFICATION object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserverForName:PET_TYPE_CHANGED_NOTIFICATION object:nil queue:nil usingBlock:^(NSNotification *notification) {
+        
+        [self updateEmojiPetDisplay];
+    }];
+    
     [self updateEmojiPetDisplay];
 }
 
@@ -80,9 +86,30 @@ typedef enum FBUpdateState {
     [_emojiFrame setBackgroundImage:backgroundImage forState:UIControlStateNormal];
     if (petType == PetTypeNone) {
         _emojiFrame.enabled = YES;
+        
+        [self.navigationItem setRightBarButtonItem:nil];
+        
     } else {
-        _emojiFrame.enabled = NO;
+        _emojiFrame.enabled = YES; // DEBUG !!!! SET THIS TO NO
+        
+        UIView* leftButtonView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 37.5)];
+        
+        UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        leftButton.backgroundColor = [UIColor clearColor];
+        leftButton.frame = leftButtonView.frame;
+        [leftButton setImage:[ResourceHelper petFrameImageForPetType:petType] forState:UIControlStateNormal];
+        [leftButton setTitle:@"" forState:UIControlStateNormal];
+        leftButton.autoresizesSubviews = YES;
+        leftButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin;
+        [leftButton addTarget:self action:@selector(showPetSelectorViewController) forControlEvents:UIControlEventTouchUpInside];
+        [leftButtonView addSubview:leftButton];
+        
+        UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:leftButtonView];
+        self.navigationItem.leftBarButtonItem = leftBarButton;
+        
     }
+    
+    
 }
 
 - (void)presentLoginViewControllerIfNecessary {
@@ -122,6 +149,19 @@ typedef enum FBUpdateState {
 
     }];
 
+}
+
+- (IBAction)emojiFramePressed:(id)sender {
+    [self showPetSelectorViewController];
+}
+
+- (void)showPetSelectorViewController {
+    PetSelectorViewController *petSelectorViewController = [[PetSelectorViewController alloc] initWithNibName:@"PetSelectorViewController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:petSelectorViewController];
+    
+    [self presentViewController:navController animated:YES completion:^{
+    }];
 }
 
 - (void)updateWatchImage:(int)imageNum {
