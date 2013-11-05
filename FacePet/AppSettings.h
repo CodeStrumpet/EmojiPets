@@ -12,5 +12,11 @@
 
 + (PetType)petType;
 + (void)setPetType:(PetType)type;
++ (UIImage *)userProfileImage;
++ (void)setUserProfileImageData:(NSData *)imageData;
++ (NSString *)userName;
++ (void)setUserName:(NSString *)userName;
++ (NSString *)facebookID;
++ (void)setFacebookID:(NSString *)facebookID;
 
 @end

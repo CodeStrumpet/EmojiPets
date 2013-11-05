@@ -68,14 +68,52 @@ typedef enum FBUpdateState {
     
     [self presentLoginViewControllerIfNecessary];
     
+    [self updateEmojiPetDisplay];
+    
+    [self updateUserBarButton];
+    
+    [self setTitle:@"EmojiPet"];
+    
+    
+    // Handle Graph updated
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGraphReturned:) name:GRAPH_UPDATE_NOTIFICATION object:nil];
     
+    // Handle Pet Change update
     [[NSNotificationCenter defaultCenter] addObserverForName:PET_TYPE_CHANGED_NOTIFICATION object:nil queue:nil usingBlock:^(NSNotification *notification) {
         
         [self updateEmojiPetDisplay];
     }];
     
-    [self updateEmojiPetDisplay];
+    // Handle login change notification LOGGED_IN_USER_CHANGED
+    [[NSNotificationCenter defaultCenter] addObserverForName:LOGGED_IN_USER_CHANGED object:nil queue:nil usingBlock:^(NSNotification *notification) {
+        
+        [self updateUserBarButton];
+    }];
+    
+    
+}
+
+- (void)updateUserBarButton {
+    
+    UIImage *profileImage = [AppSettings userProfileImage];
+    if (profileImage) {
+        UIView* leftButtonView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
+        
+        UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        leftButton.backgroundColor = [UIColor clearColor];
+        leftButton.frame = leftButtonView.frame;
+        
+        [leftButton setImage:[profileImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+        [leftButton setTitle:@"" forState:UIControlStateNormal];
+        leftButton.autoresizesSubviews = YES;
+        leftButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin;
+        [leftButton addTarget:self action:@selector(showPetSelectorViewController) forControlEvents:UIControlEventTouchUpInside];
+        [leftButtonView addSubview:leftButton];
+        
+        UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:leftButtonView];
+        self.navigationItem.rightBarButtonItem = leftBarButton;
+    }
+
 }
 
 - (void)updateEmojiPetDisplay {
@@ -97,7 +135,7 @@ typedef enum FBUpdateState {
         UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeSystem];
         leftButton.backgroundColor = [UIColor clearColor];
         leftButton.frame = leftButtonView.frame;
-        [leftButton setImage:[ResourceHelper petFrameImageForPetType:petType] forState:UIControlStateNormal];
+        [leftButton setImage:[[ResourceHelper petFrameImageForPetType:petType] imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         [leftButton setTitle:@"" forState:UIControlStateNormal];
         leftButton.autoresizesSubviews = YES;
         leftButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin;
