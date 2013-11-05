@@ -11,6 +11,7 @@
 #import "NetworkUtils.h"
 #import <Parse/Parse.h>
 
+#define PEBBLE_APP_UUID 0xB2, 0xF9, 0xE6, 0x12, 0x68, 0x71, 0x45, 0x1C, 0xB2, 0x3B, 0x2C, 0x93, 0x32, 0xCD, 0x51, 0x27
 
 @implementation AppDelegate
 
@@ -104,21 +105,20 @@
     // Real world apps should communicate only if the user is actively using the app, because there
     // is one communication session that is shared between all 3rd party iOS apps.
     
-    // Test if the Pebble's firmware supports AppMessages / Weather:
+    // Test if the Pebble's firmware supports our app:
     [watch appMessagesGetIsSupported:^(PBWatch *watch, BOOL isAppMessagesSupported) {
         if (isAppMessagesSupported) {
-            // Configure our communications channel to target the weather app:
-            // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definition on the watch's end:
-            uint8_t bytes[] = {0xB2, 0xF9, 0xE6, 0x12, 0x68, 0x71, 0x45, 0x1C, 0xB2, 0x3B, 0x2C, 0x93, 0x32, 0xCD, 0x51, 0x27};
+            
+            // Configure our communications channel to target our app:
+            uint8_t bytes[] = {PEBBLE_APP_UUID};
             NSData *uuid = [NSData dataWithBytes:bytes length:sizeof(bytes)];
             [watch appMessagesSetUUID:uuid];
             
-            NSString *message = [NSString stringWithFormat:@"Yay! %@ supports AppMessages :D", [watch name]];
-            [[[UIAlertView alloc] initWithTitle:@"Connected!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[NSNotificationCenter defaultCenter] postNotificationName:WATCH_CONNECTED_NOTIFICATION object:self userInfo:nil];
+            
         } else {
             
-            NSString *message = [NSString stringWithFormat:@"Blegh... %@ does NOT support AppMessages :'(", [watch name]];
-            [[[UIAlertView alloc] initWithTitle:@"Connected..." message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            [[NSNotificationCenter defaultCenter] postNotificationName:WATCH_DISCONNECTED_NOTIFICATION object:self userInfo:nil];
         }
     }];
 }
