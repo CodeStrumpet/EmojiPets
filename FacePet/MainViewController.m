@@ -32,6 +32,8 @@ typedef enum FBUpdateState {
 @property (nonatomic, strong) FBDiff *statusesDiff;
 @property (nonatomic, assign) FBUpdateState currUpdateState;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
+@property (strong, nonatomic) IBOutlet UIButton *emojiFrame;
+@property (strong, nonatomic) IBOutlet UIImageView *emojiDisplay;
 
 @end
 
@@ -66,6 +68,21 @@ typedef enum FBUpdateState {
     [self presentLoginViewControllerIfNecessary];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGraphReturned:) name:GRAPH_UPDATE_NOTIFICATION object:nil];
+    
+    [self updateEmojiPetDisplay];
+}
+
+- (void)updateEmojiPetDisplay {
+    PetType petType = [AppSettings petType];
+    
+    UIImage *backgroundImage = [ResourceHelper petFrameImageForPetType:petType];
+    
+    [_emojiFrame setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+    if (petType == PetTypeNone) {
+        _emojiFrame.enabled = YES;
+    } else {
+        _emojiFrame.enabled = NO;
+    }
 }
 
 - (void)presentLoginViewControllerIfNecessary {

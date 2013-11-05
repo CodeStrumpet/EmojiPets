@@ -12,5 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "FacePetConstants.h"
+    #import "AppSettings.h"
+    #import "ResourceHelper.h"
 
 #endif

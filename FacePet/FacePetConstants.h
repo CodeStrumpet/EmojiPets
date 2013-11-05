@@ -23,4 +23,12 @@ typedef enum GraphCall {
     GraphCallStatuses
 } GraphCall;
 
+
+typedef enum PetType {
+    PetTypeNone = 0,
+    PetTypeBear,
+    PetTypeFox,
+    PetTypeElephant
+} PetType;
+
 #endif
