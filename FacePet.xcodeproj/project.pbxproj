@@ -11,6 +11,16 @@
 		4BA33075181B265E009D124F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA33073181B265E009D124F /* LoginViewController.xib */; };
 		4BA3307B181C2FEA009D124F /* FBGraphConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3307A181C2FEA009D124F /* FBGraphConnection.m */; };
 		4BA3307E181C3025009D124F /* FBGraphStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3307D181C3025009D124F /* FBGraphStore.m */; };
+		4BAB9D28182980D600D2C853 /* BEAR_cropped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D25182980D600D2C853 /* BEAR_cropped@2x.png */; };
+		4BAB9D29182980D600D2C853 /* FOX_cropped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D26182980D600D2C853 /* FOX_cropped@2x.png */; };
+		4BAB9D2A182980D600D2C853 /* ELEPHANT_cropped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D27182980D600D2C853 /* ELEPHANT_cropped@2x.png */; };
+		4BAB9D2C182989A400D2C853 /* choose_your_pet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D2B182989A300D2C853 /* choose_your_pet@2x.png */; };
+		4BAB9D2E182989AD00D2C853 /* choose_your_pet_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D2D182989AD00D2C853 /* choose_your_pet_light@2x.png */; };
+		4BAB9D3118298AAA00D2C853 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB9D3018298AAA00D2C853 /* AppSettings.m */; };
+		4BAB9D3418298B9700D2C853 /* ResourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB9D3318298B9700D2C853 /* ResourceHelper.m */; };
+		4BAB9D3618298ED100D2C853 /* choose_your_pet_gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D3518298ED100D2C853 /* choose_your_pet_gradient@2x.png */; };
+		4BAB9D391829910500D2C853 /* PetSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB9D381829910500D2C853 /* PetSelectorViewController.m */; };
+		4BAB9D3B182991AD00D2C853 /* PetSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D3A182991AD00D2C853 /* PetSelectorViewController.xib */; };
 		4BB7319317BAA00C009294E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319217BAA00C009294E0 /* UIKit.framework */; };
 		4BB7319517BAA00C009294E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319417BAA00C009294E0 /* Foundation.framework */; };
 		4BB7319717BAA00C009294E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319617BAA00C009294E0 /* CoreGraphics.framework */; };
@@ -45,6 +55,19 @@
 		4BA3307A181C2FEA009D124F /* FBGraphConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGraphConnection.m; sourceTree = "<group>"; };
 		4BA3307C181C3025009D124F /* FBGraphStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGraphStore.h; sourceTree = "<group>"; };
 		4BA3307D181C3025009D124F /* FBGraphStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGraphStore.m; sourceTree = "<group>"; };
+		4BAB9D25182980D600D2C853 /* BEAR_cropped@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BEAR_cropped@2x.png"; sourceTree = "<group>"; };
+		4BAB9D26182980D600D2C853 /* FOX_cropped@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FOX_cropped@2x.png"; sourceTree = "<group>"; };
+		4BAB9D27182980D600D2C853 /* ELEPHANT_cropped@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ELEPHANT_cropped@2x.png"; sourceTree = "<group>"; };
+		4BAB9D2B182989A300D2C853 /* choose_your_pet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choose_your_pet@2x.png"; sourceTree = "<group>"; };
+		4BAB9D2D182989AD00D2C853 /* choose_your_pet_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choose_your_pet_light@2x.png"; sourceTree = "<group>"; };
+		4BAB9D2F18298AAA00D2C853 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
+		4BAB9D3018298AAA00D2C853 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
+		4BAB9D3218298B9700D2C853 /* ResourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceHelper.h; sourceTree = "<group>"; };
+		4BAB9D3318298B9700D2C853 /* ResourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceHelper.m; sourceTree = "<group>"; };
+		4BAB9D3518298ED100D2C853 /* choose_your_pet_gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choose_your_pet_gradient@2x.png"; sourceTree = "<group>"; };
+		4BAB9D371829910500D2C853 /* PetSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetSelectorViewController.h; sourceTree = "<group>"; };
+		4BAB9D381829910500D2C853 /* PetSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetSelectorViewController.m; sourceTree = "<group>"; };
+		4BAB9D3A182991AD00D2C853 /* PetSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PetSelectorViewController.xib; sourceTree = "<group>"; };
 		4BB7318F17BAA00C009294E0 /* FacePet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacePet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB7319217BAA00C009294E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BB7319417BAA00C009294E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,6 +141,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BAB9D181829791000D2C853 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BAB9D3518298ED100D2C853 /* choose_your_pet_gradient@2x.png */,
+				4BAB9D2D182989AD00D2C853 /* choose_your_pet_light@2x.png */,
+				4BAB9D2B182989A300D2C853 /* choose_your_pet@2x.png */,
+				4BAB9D25182980D600D2C853 /* BEAR_cropped@2x.png */,
+				4BAB9D26182980D600D2C853 /* FOX_cropped@2x.png */,
+				4BAB9D27182980D600D2C853 /* ELEPHANT_cropped@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4BB7318617BAA00C009294E0 = {
 			isa = PBXGroup;
 			children = (
@@ -157,15 +193,16 @@
 		4BB7319817BAA00C009294E0 /* FacePet */ = {
 			isa = PBXGroup;
 			children = (
-				4BFF37931827650100D00ADA /* pebble_app */,
 				4BB731C917BAA8AF009294E0 /* html */,
+				4BFF37931827650100D00ADA /* pebble_app */,
+				4BAB9D181829791000D2C853 /* Resources */,
+				4BB7319917BAA00C009294E0 /* Supporting Files */,
 				4BB731A117BAA00C009294E0 /* AppDelegate.h */,
 				4BB731A217BAA00C009294E0 /* AppDelegate.m */,
 				4BB731C117BAA3B5009294E0 /* MainViewController.h */,
 				4BB731C217BAA3B5009294E0 /* MainViewController.m */,
 				4BB731C317BAA3B5009294E0 /* MainViewController_iPad.xib */,
 				4BB731C617BAA436009294E0 /* MainViewController_iPhone.xib */,
-				4BB7319917BAA00C009294E0 /* Supporting Files */,
 				4BA33071181B265E009D124F /* LoginViewController.h */,
 				4BA33072181B265E009D124F /* LoginViewController.m */,
 				4BA33073181B265E009D124F /* LoginViewController.xib */,
@@ -180,6 +217,13 @@
 				4BFF377F18261C8900D00ADA /* FBDiff.h */,
 				4BFF378018261C8900D00ADA /* FBDiff.m */,
 				4BFF378218261D6B00D00ADA /* FacePetConstants.h */,
+				4BAB9D2F18298AAA00D2C853 /* AppSettings.h */,
+				4BAB9D3018298AAA00D2C853 /* AppSettings.m */,
+				4BAB9D3218298B9700D2C853 /* ResourceHelper.h */,
+				4BAB9D3318298B9700D2C853 /* ResourceHelper.m */,
+				4BAB9D371829910500D2C853 /* PetSelectorViewController.h */,
+				4BAB9D381829910500D2C853 /* PetSelectorViewController.m */,
+				4BAB9D3A182991AD00D2C853 /* PetSelectorViewController.xib */,
 			);
 			path = FacePet;
 			sourceTree = "<group>";
@@ -316,10 +360,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BA33075181B265E009D124F /* LoginViewController.xib in Resources */,
+				4BAB9D2A182980D600D2C853 /* ELEPHANT_cropped@2x.png in Resources */,
+				4BAB9D29182980D600D2C853 /* FOX_cropped@2x.png in Resources */,
+				4BAB9D28182980D600D2C853 /* BEAR_cropped@2x.png in Resources */,
 				4BB7319D17BAA00C009294E0 /* InfoPlist.strings in Resources */,
 				4BB731A517BAA00C009294E0 /* Default.png in Resources */,
+				4BAB9D3B182991AD00D2C853 /* PetSelectorViewController.xib in Resources */,
+				4BAB9D3618298ED100D2C853 /* choose_your_pet_gradient@2x.png in Resources */,
+				4BAB9D2C182989A400D2C853 /* choose_your_pet@2x.png in Resources */,
 				4BB731A717BAA00C009294E0 /* Default@2x.png in Resources */,
 				4BB731A917BAA00C009294E0 /* Default-568h@2x.png in Resources */,
+				4BAB9D2E182989AD00D2C853 /* choose_your_pet_light@2x.png in Resources */,
 				4BB731C517BAA3B5009294E0 /* MainViewController_iPad.xib in Resources */,
 				4BB731C717BAA436009294E0 /* MainViewController_iPhone.xib in Resources */,
 				4BB731CA17BAA8AF009294E0 /* html in Resources */,
@@ -372,8 +423,11 @@
 				4BB7319F17BAA00C009294E0 /* main.m in Sources */,
 				4BB731A317BAA00C009294E0 /* AppDelegate.m in Sources */,
 				4BFF378118261C8900D00ADA /* FBDiff.m in Sources */,
+				4BAB9D3418298B9700D2C853 /* ResourceHelper.m in Sources */,
+				4BAB9D391829910500D2C853 /* PetSelectorViewController.m in Sources */,
 				4BB731C417BAA3B5009294E0 /* MainViewController.m in Sources */,
 				4BA3307E181C3025009D124F /* FBGraphStore.m in Sources */,
+				4BAB9D3118298AAA00D2C853 /* AppSettings.m in Sources */,
 				4BA3307B181C2FEA009D124F /* FBGraphConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

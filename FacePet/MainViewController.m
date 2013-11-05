@@ -107,7 +107,7 @@ typedef enum FBUpdateState {
         [leftButton setTitle:@"" forState:UIControlStateNormal];
         leftButton.autoresizesSubviews = YES;
         leftButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin;
-        [leftButton addTarget:self action:@selector(showPetSelectorViewController) forControlEvents:UIControlEventTouchUpInside];
+        [leftButton addTarget:self action:@selector(presentLoginViewController) forControlEvents:UIControlEventTouchUpInside];
         [leftButtonView addSubview:leftButton];
         
         UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:leftButtonView];
@@ -153,10 +153,16 @@ typedef enum FBUpdateState {
 - (void)presentLoginViewControllerIfNecessary {
     if (![PFUser currentUser] ||
         ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        
-        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:Nil];
-        [self presentViewController:loginViewController animated:NO completion:^{}];
+        [self presentLoginViewController];
     }
+}
+
+- (void)presentLoginViewController {
+    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:Nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    
+    [self presentViewController:navController animated:NO completion:^{}];
 }
 
 - (IBAction)getFeedPressed:(id)sender {

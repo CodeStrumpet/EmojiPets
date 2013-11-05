@@ -14,6 +14,11 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) NSMutableData *imageData;
 @property (strong, nonatomic) NSURLConnection *urlConnection;
+@property (strong, nonatomic) IBOutlet UIView *loginView;
+@property (strong, nonatomic) IBOutlet UIView *loggedInView;
+@property (strong, nonatomic) IBOutlet UIImageView *userImageView;
+@property (strong, nonatomic) IBOutlet UILabel *userNameLabel;
+
 
 @end
 
@@ -32,6 +37,25 @@
 {
     [super viewDidLoad];
     
+     UIBarButtonItem *dismissItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
+    
+    [self.navigationItem setRightBarButtonItem:dismissItem];
+    
+    [self updateDisplay];
+}
+
+- (void)updateDisplay {
+    if (![PFUser currentUser] ||
+        ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        _loginView.hidden = NO;
+        _loggedInView.hidden = YES;
+    } else {
+        _loggedInView.hidden = NO;
+        _loginView.hidden = YES;
+        
+        _userImageView.image = [AppSettings userProfileImage];
+        _userNameLabel.text = [AppSettings userName];
+    }
 }
 
 - (void)login {
@@ -70,6 +94,12 @@
     [_activityIndicator startAnimating];
     
     [self login];
+}
+
+- (IBAction)logoutPressed:(id)sender {
+    [PFUser logOut];
+    
+    [self updateDisplay];
 }
 
 - (void)getUserProfileInfo {
