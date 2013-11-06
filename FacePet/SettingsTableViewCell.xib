@@ -28,8 +28,8 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imageView" destination="5Lu-eP-hZj" id="iai-cQ-Sg6"/>
                 <outlet property="label" destination="TY8-hV-hHE" id="Uhl-IJ-1ds"/>
+                <outlet property="logoView" destination="5Lu-eP-hZj" id="tfv-wa-ufd"/>
             </connections>
         </tableViewCell>
     </objects>

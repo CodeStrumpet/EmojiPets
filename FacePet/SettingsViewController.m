@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "UIViewController+JASidePanel.h"
 #import "LoginViewController.h"
+#import "PetSelectorViewController.h"
 #import <PebbleKit/PebbleKit.h>
 #import "AppDelegate.h"
 #import "SettingsTableViewCell.h"
@@ -61,6 +62,19 @@ enum {
     [super viewDidLoad];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"SettingsTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    
+    // Handle Pet Change update
+    [[NSNotificationCenter defaultCenter] addObserverForName:PET_TYPE_CHANGED_NOTIFICATION object:nil queue:nil usingBlock:^(NSNotification *notification) {
+        
+        [_tableView reloadData];
+    }];
+    
+    // Handle login change notification LOGGED_IN_USER_CHANGED
+    [[NSNotificationCenter defaultCenter] addObserverForName:LOGGED_IN_USER_CHANGED object:nil queue:nil usingBlock:^(NSNotification *notification) {
+        
+        [_tableView reloadData];
+    }];
+
 }
 
 #pragma mark - Table delegates
@@ -103,17 +117,17 @@ enum {
     
     if (indexPath.row == kEmojiRow) {
         PetType type = [AppSettings petType];
-        cell.imageView.image = [ResourceHelper petFrameImageForPetType:type];
+        cell.logoView.image = [ResourceHelper petFrameImageForPetType:type];
         cell.label.text = @"Choose your pet";
     } else if (indexPath.row == kPebbleRow) {
-        cell.imageView.image = [UIImage imageNamed:@"pebble_watch"];
+        cell.logoView.image = [UIImage imageNamed:@"pebble_watch"];
         if ([AppDelegate instance].targetWatch) {
             cell.label.text = [NSString stringWithFormat:@"Connected to %@", [[AppDelegate instance].targetWatch name]];
         } else {
             cell.label.text = @"No watch connection";
         }
     } else {
-        cell.imageView.image = [AppSettings userProfileImage];
+        cell.logoView.image = [AppSettings userProfileImage];
         if ([AppSettings userName]) {
             cell.label.text = [AppSettings userName];
         } else {
@@ -129,7 +143,12 @@ enum {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == kEmojiRow) {
+        PetSelectorViewController *petSelectorViewController = [[PetSelectorViewController alloc] initWithNibName:@"PetSelectorViewController" bundle:nil];
         
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:petSelectorViewController];
+        
+        [self presentViewController:navController animated:YES completion:^{
+        }];
     } else if (indexPath.row == kPebbleRow) {
         
     } else if (indexPath.row == kUserRow) {

@@ -87,10 +87,8 @@ typedef enum FBUpdateState {
     // Handle login change notification LOGGED_IN_USER_CHANGED
     [[NSNotificationCenter defaultCenter] addObserverForName:LOGGED_IN_USER_CHANGED object:nil queue:nil usingBlock:^(NSNotification *notification) {
         
-        [self updateUserBarButton];
+
     }];
-    
-    
 }
 
 - (void)updateUserBarButton {
@@ -111,7 +109,7 @@ typedef enum FBUpdateState {
         [leftButtonView addSubview:leftButton];
         
         UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:leftButtonView];
-        self.navigationItem.rightBarButtonItem = leftBarButton;
+        //self.navigationItem.rightBarButtonItem = leftBarButton;
     }
 
 }
@@ -143,7 +141,7 @@ typedef enum FBUpdateState {
         [leftButtonView addSubview:leftButton];
         
         UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:leftButtonView];
-        self.navigationItem.leftBarButtonItem = leftBarButton;
+        //self.navigationItem.leftBarButtonItem = leftBarButton;
         
     }
 }
