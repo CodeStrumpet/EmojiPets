@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <PebbleKit/PebbleKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "MainViewController.h"
 #import "AppDelegate.h"
 #import "FBGraphConnection.h"
@@ -34,6 +35,12 @@ typedef enum FBUpdateState {
 @property (nonatomic, strong) FBDiff *statusesDiff;
 @property (nonatomic, assign) FBUpdateState currUpdateState;
 @property (strong, nonatomic) IBOutlet EmojiFrameView *emojiFrameView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *hungrySegments;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *worriedSegments;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *boredSegments;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *intriguedSegments;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *happySegments;
+@property (strong, nonatomic) IBOutlet UIView *testPane;
 
 @end
 
@@ -72,6 +79,15 @@ typedef enum FBUpdateState {
     
     [self setTitle:@"EmojiPet"];
     
+    [_hungrySegments setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    [_worriedSegments setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    [_boredSegments setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    [_intriguedSegments setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    [_happySegments setSelectedSegmentIndex:UISegmentedControlNoSegment];
+//    _testPane.layer.cornerRadius = 8;
+//    _testPane.layer.borderWidth = 1;
+//    _testPane.layer.borderColor = [[UIColor grayColor] CGColor];
+    
     
     // Handle Graph updated
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateGraphReturned:) name:GRAPH_UPDATE_NOTIFICATION object:nil];
@@ -84,8 +100,6 @@ typedef enum FBUpdateState {
     
     // Handle login change notification LOGGED_IN_USER_CHANGED
     [[NSNotificationCenter defaultCenter] addObserverForName:LOGGED_IN_USER_CHANGED object:nil queue:nil usingBlock:^(NSNotification *notification) {
-        
-
     }];
 }
 

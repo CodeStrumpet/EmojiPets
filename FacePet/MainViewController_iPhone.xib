@@ -7,8 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="boredSegments" destination="P1z-QO-i7K" id="fAf-oM-0zw"/>
                 <outlet property="emojiFrameView" destination="iMK-c2-cZN" id="5oh-w6-UFB"/>
+                <outlet property="happySegments" destination="hBv-zl-iEh" id="O5B-6D-3ix"/>
+                <outlet property="hungrySegments" destination="2hc-Hd-mck" id="XdP-Q0-p4c"/>
+                <outlet property="intriguedSegments" destination="UhC-8n-FgD" id="DKW-Yv-ark"/>
+                <outlet property="testPane" destination="eMb-ZO-AnH" id="Iad-Ri-elY"/>
                 <outlet property="view" destination="2" id="8"/>
+                <outlet property="worriedSegments" destination="aPR-JZ-VnT" id="Z0A-LI-jls"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -31,8 +37,8 @@
                                 <action selector="emojiFramePressed:" destination="-1" eventType="touchUpInside" id="VTY-qJ-v3t"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BEAR_cropped.png" id="dR0-G4-nYN">
-                            <rect key="frame" x="48" y="101" width="104" height="82"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dR0-G4-nYN">
+                            <rect key="frame" x="46" y="99" width="106" height="84"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="0.68384662383806349" blue="0.0023652419339791342" alpha="0.0" colorSpace="calibratedRGB"/>
                         </imageView>
@@ -44,11 +50,11 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="eMb-ZO-AnH">
-                    <rect key="frame" x="0.0" y="309" width="320" height="259"/>
+                    <rect key="frame" x="7" y="303" width="308" height="259"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" id="P1z-QO-i7K">
-                            <rect key="frame" x="106" y="96" width="194" height="29"/>
+                            <rect key="frame" x="94" y="125" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="1"/>
@@ -61,13 +67,13 @@
                             </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Go2-ct-rV6">
-                            <rect key="frame" x="13" y="185" width="77" height="21"/>
+                            <rect key="frame" x="20" y="214" width="77" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" id="2hc-Hd-mck">
-                            <rect key="frame" x="106" y="12" width="194" height="29"/>
+                            <rect key="frame" x="94" y="41" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="1"/>
@@ -80,13 +86,13 @@
                             </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intrigued" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h8c-5w-maI">
-                            <rect key="frame" x="13" y="142" width="77" height="21"/>
+                            <rect key="frame" x="20" y="171" width="77" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <segmentedControl opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" id="UhC-8n-FgD">
-                            <rect key="frame" x="106" y="139" width="194" height="29"/>
+                            <rect key="frame" x="94" y="168" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="1"/>
@@ -99,13 +105,13 @@
                             </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bored" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QlU-SM-1uc">
-                            <rect key="frame" x="13" y="99" width="77" height="21"/>
+                            <rect key="frame" x="20" y="128" width="77" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <segmentedControl opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" id="hBv-zl-iEh">
-                            <rect key="frame" x="106" y="182" width="194" height="29"/>
+                            <rect key="frame" x="94" y="211" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="1"/>
@@ -118,13 +124,13 @@
                             </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worried" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qyQ-4E-sCv">
-                            <rect key="frame" x="13" y="57" width="77" height="21"/>
+                            <rect key="frame" x="20" y="86" width="77" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" id="aPR-JZ-VnT">
-                            <rect key="frame" x="106" y="54" width="194" height="29"/>
+                            <rect key="frame" x="94" y="83" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="1"/>
@@ -137,24 +143,24 @@
                             </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bfv-GB-u06">
-                            <rect key="frame" x="13" y="15" width="77" height="21"/>
+                            <rect key="frame" x="20" y="44" width="77" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QLO-Ew-gRP">
-                            <rect key="frame" x="74" y="221" width="172" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Get Feed">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="getFeedPressed:" destination="-1" eventType="touchUpInside" id="TxT-rj-wDf"/>
-                            </connections>
-                        </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QLO-Ew-gRP">
+                    <rect key="frame" x="74" y="55" width="172" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Get Feed">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="getFeedPressed:" destination="-1" eventType="touchUpInside" id="TxT-rj-wDf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -162,7 +168,4 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
-    <resources>
-        <image name="BEAR_cropped.png" width="215" height="202"/>
-    </resources>
 </document>

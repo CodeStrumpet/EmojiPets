@@ -23,7 +23,12 @@
     float width = _frameButton.bounds.size.width;
     float height = _frameButton.bounds.size.height;
     
-    CGRect displayFrame = CGRectMake(_frameButton.frame.origin.x + _displayX * width, _frameButton.frame.origin.y + _displayY * height, _displayWidth * width, _displayHeight * height);
+    float xOffset = -1;
+    float yOffset = -1;
+    float widthAddition = 4;
+    float heightAddition = 4;
+    
+    CGRect displayFrame = CGRectMake(_frameButton.frame.origin.x + _displayX * width + xOffset, _frameButton.frame.origin.y + _displayY * height + yOffset, _displayWidth * width + widthAddition, _displayHeight * height + heightAddition);
     
     _display.frame = displayFrame;
 }
