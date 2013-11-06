@@ -23,6 +23,10 @@
 
 @property (strong, nonatomic) PBWatch *targetWatch;
 
+@property (strong, nonatomic) NSMutableDictionary *petFramesRects;
+
 + (AppDelegate *)instance;
+
+- (CGRect)petFrameForPetType:(PetType)type;
 
 @end

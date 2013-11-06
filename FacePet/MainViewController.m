@@ -69,8 +69,7 @@ typedef enum FBUpdateState {
     [self presentLoginViewControllerIfNecessary];
     
     [self updateEmojiPetDisplay];
-    
-    [self updateUserBarButton];
+
     
     [self setTitle:@"EmojiPet"];
     

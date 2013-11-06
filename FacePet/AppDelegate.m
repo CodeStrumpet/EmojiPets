@@ -34,6 +34,9 @@
     // copy html files in bundle to documents directory
     [self copyBundleDirectoryToDocuments:@"html"];
     
+    // read in Emoji JSON
+    [self readEmojiFramesFromFileSystem];
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -132,7 +135,29 @@
     }];
 }
 
--(void)copyBundleDirectoryToDocuments:(NSString *)directory {
+- (CGRect)petFrameForPetType:(PetType)type {
+    
+}
+
+- (void)readEmojiFramesFromFileSystem {
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"pet_frames" ofType:@"json"];
+    
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:filePath];
+
+    NSError *jsonError;
+    NSArray *petFrames = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];
+    
+    _petFramesRects = [NSMutableDictionary new];
+    
+    for (NSDictionary *petFrame in petFrames) {
+        
+        [_petFramesRects setObject:[NSValue valueWithCGRect:CGRectMake([[petFrame objectForKey:@"x"] floatValue], [[petFrame objectForKey:@"y"] floatValue], [[petFrame objectForKey:@"width"] floatValue], [[petFrame objectForKey:@"height"] floatValue])] forKey:[petFrame objectForKey:@"petType"]];
+    }
+
+}
+
+- (void)copyBundleDirectoryToDocuments:(NSString *)directory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
