@@ -99,6 +99,9 @@
 - (IBAction)logoutPressed:(id)sender {
     [PFUser logOut];
     
+    [AppSettings setUserProfileImageData:nil];
+    [AppSettings setUserName:nil];
+    
     [self updateDisplay];
 }
 

@@ -28,6 +28,8 @@
 
     if (imageData) {
         return [UIImage imageWithData:imageData];
+    } else {
+        return [UIImage imageNamed:@"profile-picture"];
     }
     return nil;
 }

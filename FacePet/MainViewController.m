@@ -146,8 +146,6 @@ typedef enum FBUpdateState {
         self.navigationItem.leftBarButtonItem = leftBarButton;
         
     }
-    
-    
 }
 
 - (void)presentLoginViewControllerIfNecessary {

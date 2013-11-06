@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "NetworkUtils.h"
+#import "SettingsViewController.h"
 #import <Parse/Parse.h>
+#import <JASidePanels/JASidePanelController.h>
 
 #define PEBBLE_APP_UUID 0xB2, 0xF9, 0xE6, 0x12, 0x68, 0x71, 0x45, 0x1C, 0xB2, 0x3B, 0x2C, 0x93, 0x32, 0xCD, 0x51, 0x27
 
@@ -36,10 +38,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+
+        
+        self.viewController = [[JASidePanelController alloc] init];
         
         MainViewController *mainViewcontroller = [[MainViewController alloc] initWithNibName:@"MainViewController_iPhone" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewcontroller];
-        self.window.rootViewController = self.navigationController;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainViewcontroller];
+        self.viewController.centerPanel = navController;
+        
+        self.viewController.leftPanel = [[SettingsViewController alloc] init];
+        
+        self.window.rootViewController = self.viewController;
         
     } else {
         
