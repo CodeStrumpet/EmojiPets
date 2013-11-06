@@ -145,7 +145,7 @@ typedef enum FBUpdateState {
 - (IBAction)getFeedPressed:(id)sender {
     
     _currUpdateState = UpdateStateNone;
-    [_graphConnection updateGraphStore:_graphStore withCall:GraphCallFeed];
+    //[_graphConnection updateGraphStore:_graphStore withCall:GraphCallFeed];
     [_graphConnection updateGraphStore:_graphStore withCall:GraphCallStatuses];
     
 }
@@ -212,8 +212,66 @@ typedef enum FBUpdateState {
     }
     
     
-    if (_currUpdateState == UpdateStateBoth) {
-        NSLog(@"All diffs finished %d", _currUpdateState);
+    //if (_currUpdateState == UpdateStateBoth) {
+        //NSLog(@"All diffs finished %d", _currUpdateState);
+        
+    int numPosts = _feedDiff.totalPosts + _statusesDiff.totalPosts;
+    // cap the total posts to the number of hunger states
+    if (numPosts > 4) {
+        numPosts = 4;
+    }
+    
+    BOOL newPosts = _feedDiff.newPosts > 0 || _statusesDiff.newPosts > 0;
+    BOOL newActivity = _feedDiff.newLikes > 0 || _statusesDiff.newLikes > 0 || _feedDiff.newComments > 0 || _statusesDiff.newComments > 0;
+    
+    int activityMeasure = _feedDiff.totalLikes + _feedDiff.totalComments + _statusesDiff.totalLikes + _statusesDiff.totalComments;
+    
+    if (activityMeasure > 3) {
+        activityMeasure = 3;
+    }
+    
+    NSLog(@"NumPosts: %d  NewPosts: %@, NewActivity: %@, ActivityMeasure: %d",
+          numPosts, newPosts ? @"YES" : @"NO", newActivity ? @"YES" : @"NO", activityMeasure);
+    
+    
+    if (newPosts && !newActivity) {
+        [self updateWithHungerState:numPosts andExcitementLevel:0 turnOff:YES];
+    } else if ((newPosts && newActivity) || (!newPosts && newActivity)) {
+        [self updateWithHungerState:numPosts andExcitementLevel:activityMeasure turnOff:YES];
+    } else {
+        [self updateWithHungerState:numPosts andExcitementLevel:0 turnOff:YES];
+    }
+        
+    //}
+}
+
+- (void)updateWithHungerState:(int)hungerState andExcitementLevel:(int)excitementLevel turnOff:(BOOL)turnOff {
+    
+    _graphStore.numPostsToday = hungerState; // make sure we can go back to this number...
+    
+    int faceSetNum = [AppSettings faceSetNum];
+    
+    NSDictionary *petFace = [ResourceHelper petFaceForFaceSetNum:faceSetNum hungerLevel:hungerState andExcitementLevel:excitementLevel];
+    
+    NSString *petFaceName = [[petFace allKeys] firstObject];
+    
+    if (petFaceName) {
+        UIImage *petFaceImage = [UIImage imageNamed:petFaceName];
+        [_emojiFrameView displayImage:petFaceImage];
+        
+        NSNumber *watchImageNumber = [petFace objectForKey:petFaceName];
+        
+        [self updateWatchImage:[watchImageNumber intValue]];
+        
+        if (turnOff) {
+            // reset back to our base state
+            int64_t delayInSeconds = 3;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self updateWithHungerState:_graphStore.numPostsToday andExcitementLevel:0 turnOff:NO];
+            });
+            
+        }
     }
 }
 
@@ -229,21 +287,11 @@ typedef enum FBUpdateState {
     
     int hungerState = ((UISegmentedControl *) sender).tag;
     
-    int faceSetNum = [AppSettings faceSetNum];
+    [self updateWithHungerState:hungerState andExcitementLevel:excitementState turnOff:YES];
     
-    NSDictionary *petFace = [ResourceHelper petFaceForFaceSetNum:faceSetNum hungerLevel:hungerState andExcitementLevel:excitementState];
-    
-    NSString *petFaceName = [[petFace allKeys] firstObject];
-    
-    if (petFaceName) {
-        UIImage *petFaceImage = [UIImage imageNamed:petFaceName];
-        [_emojiFrameView displayImage:petFaceImage];
-        
-        NSNumber *watchImageNumber = [petFace objectForKey:petFaceName];
-        
-        [self updateWatchImage:[watchImageNumber intValue]];
-    }
 }
+
+
 
 
 

@@ -12,6 +12,9 @@
 
 @interface FBGraphStore : NSObject
 
+@property (strong, nonatomic) NSDate *referenceDate;
+@property (assign, nonatomic) int numPostsToday;
+
 - (void)updateWithGraphResults:(NSDictionary *)results graphCall:(GraphCall)graphCall;
 
 @end

@@ -16,6 +16,9 @@
         _newLikes = 0;
         _newComments = 0;
         _graphCall = GraphCallNone;
+        _totalLikes = 0;
+        _totalComments = 0;
+        _totalPosts = 0;
     }
     return self;
 }

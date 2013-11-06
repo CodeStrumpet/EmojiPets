@@ -14,5 +14,7 @@
 @property (nonatomic, assign) int newPosts;
 @property (nonatomic, assign) int newLikes;
 @property (nonatomic, assign) int newComments;
-
+@property (nonatomic, assign) int totalLikes;
+@property (nonatomic, assign) int totalComments;
+@property (nonatomic, assign) int totalPosts;
 @end
