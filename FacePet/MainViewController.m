@@ -34,6 +34,8 @@ typedef enum FBUpdateState {
 @property (nonatomic, strong) FBDiff *feedDiff;
 @property (nonatomic, strong) FBDiff *statusesDiff;
 @property (nonatomic, assign) FBUpdateState currUpdateState;
+@property (nonatomic, assign) BOOL showDebugView;
+
 @property (strong, nonatomic) IBOutlet EmojiFrameView *emojiFrameView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *hungrySegments;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *worriedSegments;
@@ -41,6 +43,8 @@ typedef enum FBUpdateState {
 @property (strong, nonatomic) IBOutlet UISegmentedControl *intriguedSegments;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *happySegments;
 @property (strong, nonatomic) IBOutlet UIView *testPane;
+@property (strong, nonatomic) IBOutlet UISwitch *showDebugViewSwitch;
+@property (strong, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -101,8 +105,22 @@ typedef enum FBUpdateState {
     // Handle login change notification LOGGED_IN_USER_CHANGED
     [[NSNotificationCenter defaultCenter] addObserverForName:LOGGED_IN_USER_CHANGED object:nil queue:nil usingBlock:^(NSNotification *notification) {
     }];
+    
+    
+    [self updateWithHungerState:_graphStore.numPostsToday andExcitementLevel:0 turnOff:YES];
+    
+    UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(getFeedPressed:)];
+    
+    [self.navigationItem setRightBarButtonItem:refreshItem];
+    
+    _testPane.hidden = YES;
+    _showDebugViewSwitch.on = NO;
+
 }
 
+- (IBAction)showDebugViewPressed:(id)sender {
+    _testPane.hidden = !_showDebugViewSwitch.isOn;
+}
 
 - (void)updateEmojiPetDisplay {
     PetType petType = [AppSettings petType];
@@ -125,6 +143,36 @@ typedef enum FBUpdateState {
         [_emojiFrameView updateLayout];
     }
     
+    [self updatePetMessage];
+    
+}
+
+- (void)updatePetMessage {
+    NSString *state = @"";
+    
+    if ([AppSettings petType] != PetTypeNone) {
+        switch (_graphStore.numPostsToday) {
+                
+            case 0:
+                state = @"Your pet is HUNGRY. You should feed it!";
+                break;
+            case 1:
+                state = @"Your pet is WORRIED. It probably needs some food...";
+                break;
+            case 2:
+                state = @"Your pet is BORED. Maybe you should play with it more often.";
+                break;
+            case 3:
+                state = @"Your pet is INTRIGUED. I think it likes you.";
+                break;
+            case 4:
+                state = @"You have a HAPPY pet!";
+                break;
+            default:
+                break;
+        }
+    }
+    _messageLabel.text = state;
 }
 
 - (void)presentLoginViewControllerIfNecessary {
@@ -249,6 +297,8 @@ typedef enum FBUpdateState {
     
     _graphStore.numPostsToday = hungerState; // make sure we can go back to this number...
     
+    [self updatePetMessage];
+    
     int faceSetNum = [AppSettings faceSetNum];
     
     NSDictionary *petFace = [ResourceHelper petFaceForFaceSetNum:faceSetNum hungerLevel:hungerState andExcitementLevel:excitementLevel];
@@ -257,7 +307,10 @@ typedef enum FBUpdateState {
     
     if (petFaceName) {
         UIImage *petFaceImage = [UIImage imageNamed:petFaceName];
-        [_emojiFrameView displayImage:petFaceImage];
+        
+        if ([AppSettings petType] != PetTypeNone) {
+            [_emojiFrameView displayImage:petFaceImage];
+        }
         
         NSNumber *watchImageNumber = [petFace objectForKey:petFaceName];
         

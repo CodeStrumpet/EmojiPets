@@ -25,7 +25,7 @@
                     <rect key="frame" x="20" y="113" width="280" height="342"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SocialWear is a :*( app when you aren't logged into Facebook" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="X05-fk-wAh">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EmojiPet is a  :*(  app when you aren't logged into Facebook" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="X05-fk-wAh">
                             <rect key="frame" x="0.0" y="44" width="280" height="130"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -36,7 +36,7 @@
                             <rect key="frame" x="16" y="194" width="248" height="99"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.34978008966251106" green="1" blue="0.83055240475002856" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" image="facebook-logo.png"/>
+                            <state key="normal" title="Login" image="facebook-logo.png"/>
                             <connections>
                                 <action selector="fbButtonPressed:" destination="-1" eventType="touchUpInside" id="lYC-yr-BWh"/>
                             </connections>
