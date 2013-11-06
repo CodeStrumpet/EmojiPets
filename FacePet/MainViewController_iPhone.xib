@@ -47,7 +47,7 @@
                     <rect key="frame" x="0.0" y="309" width="320" height="259"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="P1z-QO-i7K">
+                        <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="P1z-QO-i7K">
                             <rect key="frame" x="106" y="96" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -56,6 +56,9 @@
                                 <segment title="3"/>
                                 <segment title="4"/>
                             </segments>
+                            <connections>
+                                <action selector="boredSliderChanged:" destination="-1" eventType="valueChanged" id="QcU-mZ-60F"/>
+                            </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Go2-ct-rV6">
                             <rect key="frame" x="13" y="185" width="77" height="21"/>
@@ -72,6 +75,9 @@
                                 <segment title="3"/>
                                 <segment title="4"/>
                             </segments>
+                            <connections>
+                                <action selector="hungrySliderChanged:" destination="-1" eventType="valueChanged" id="Lg5-4w-qf4"/>
+                            </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intrigued" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h8c-5w-maI">
                             <rect key="frame" x="13" y="142" width="77" height="21"/>
@@ -79,7 +85,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="UhC-8n-FgD">
+                        <segmentedControl opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="UhC-8n-FgD">
                             <rect key="frame" x="106" y="139" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -88,6 +94,9 @@
                                 <segment title="3"/>
                                 <segment title="4"/>
                             </segments>
+                            <connections>
+                                <action selector="intriguedSliderChanged:" destination="-1" eventType="valueChanged" id="qhe-rJ-VW9"/>
+                            </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bored" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QlU-SM-1uc">
                             <rect key="frame" x="13" y="99" width="77" height="21"/>
@@ -95,7 +104,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="hBv-zl-iEh">
+                        <segmentedControl opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="hBv-zl-iEh">
                             <rect key="frame" x="106" y="182" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -104,6 +113,9 @@
                                 <segment title="3"/>
                                 <segment title="4"/>
                             </segments>
+                            <connections>
+                                <action selector="happySliderChanged:" destination="-1" eventType="valueChanged" id="Lpv-GC-XJj"/>
+                            </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worried" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qyQ-4E-sCv">
                             <rect key="frame" x="13" y="57" width="77" height="21"/>
@@ -111,7 +123,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="aPR-JZ-VnT">
+                        <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="aPR-JZ-VnT">
                             <rect key="frame" x="106" y="54" width="194" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -120,6 +132,9 @@
                                 <segment title="3"/>
                                 <segment title="4"/>
                             </segments>
+                            <connections>
+                                <action selector="worriedSliderChanged:" destination="-1" eventType="valueChanged" id="lNS-Cr-Ftz"/>
+                            </connections>
                         </segmentedControl>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bfv-GB-u06">
                             <rect key="frame" x="13" y="15" width="77" height="21"/>

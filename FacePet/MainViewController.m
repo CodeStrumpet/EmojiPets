@@ -136,25 +136,6 @@ typedef enum FBUpdateState {
     
 }
 
-- (IBAction)callWatchPressed:(id)sender {
-    
-    
-    // Send data to watch:
-    // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definitions on the watch's end:
-    NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
-    NSDictionary *update = @{ iconKey:[NSNumber numberWithUint8:1] };
-    
-    [[AppDelegate instance].targetWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
-        
-        if (error) {
-            NSLog(@"Error: %@", error);
-        } else {
-            NSLog(@"Success!");
-        }
-
-    }];
-
-}
 
 - (IBAction)emojiFramePressed:(id)sender {
     [self showPetSelectorViewController];
@@ -187,19 +168,19 @@ typedef enum FBUpdateState {
     }];
 }
 
-- (IBAction)sliderChanged:(id)sender {
-    int sliderValue;
-    sliderValue = lroundf(_slider.value);
-    [_slider setValue:sliderValue animated:YES];
-    
-    NSLog(@"new slider value: %d", (int)_slider.value);
-    
-    //    NSString *key = [[petFace allKeys] firstObject];
-    
-
-    
-    [self updateWatchImage:(int)_slider.value];
-}
+//- (IBAction)sliderChanged:(id)sender {
+//    int sliderValue;
+//    sliderValue = lroundf(_slider.value);
+//    [_slider setValue:sliderValue animated:YES];
+//    
+//    NSLog(@"new slider value: %d", (int)_slider.value);
+//    
+//    //    NSString *key = [[petFace allKeys] firstObject];
+//    
+//
+//    
+//    [self updateWatchImage:(int)_slider.value];
+//}
 
 - (void)updateGraphReturned:(NSNotification *)notification {
     FBDiff *diff = [notification.userInfo objectForKey:FB_DIFF_KEY];
@@ -224,6 +205,43 @@ typedef enum FBUpdateState {
 
 - (void)logout {
      [PFUser logOut]; // Log out
+}
+
+
+
+#pragma mark - DEBUG
+
+- (IBAction)hungrySliderChanged:(id)sender {
+    int excitementState = ((UISegmentedControl *) sender).selectedSegmentIndex;
+    
+    int hungerState = ((UISegmentedControl *) sender).tag;
+    
+    int faceSetNum = [AppSettings faceSetNum];
+    
+    NSDictionary *petFace = [ResourceHelper petFaceForFaceSetNum:faceSetNum hungerLevel:hungerState andExcitementLevel:excitementState];
+    
+    NSString *petFaceName = [[petFace allKeys] firstObject];
+    
+    if (petFaceName) {
+        UIImage *petFaceImage = [UIImage imageNamed:petFaceName];
+        [_emojiFrameView displayImage:petFaceImage];
+    }    
+}
+
+- (IBAction)worriedSliderChanged:(id)sender {
+    
+}
+
+- (IBAction)boredSliderChanged:(id)sender {
+    
+}
+
+- (IBAction)intriguedSliderChanged:(id)sender {
+    
+}
+
+- (IBAction)happySliderChanged:(id)sender {
+    
 }
 
 @end
