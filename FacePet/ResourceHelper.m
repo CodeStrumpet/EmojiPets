@@ -10,6 +10,22 @@
 
 @implementation ResourceHelper
 
+static NSArray *petFaces;
+
++ (void) initialize {
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"pet_faces" ofType:@"json"];
+    
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:filePath];
+    
+    NSError *jsonError;
+    petFaces = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];
+    
+    NSLog(@"NumPetFaces: %d", petFaces.count);
+    
+}
+
+
 + (UIImage *)petFrameImageForPetType:(PetType)petType {
     NSString *resourceName = @"";
     switch (petType) {
@@ -29,4 +45,13 @@
     }
     return [UIImage imageNamed:resourceName];
 }
+
++ (UIImage *)petFaceForHungerLevel:(int)hungerLevel andExcitementLevel:(int)excitement {
+    
+
+
+    
+    
+}
+
 @end

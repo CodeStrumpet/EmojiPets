@@ -28,6 +28,7 @@
 		4BAB9D471829E1D300D2C853 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D461829E1D300D2C853 /* SettingsTableViewCell.xib */; };
 		4BAB9D491829F5C700D2C853 /* pet_frames.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D481829F5C700D2C853 /* pet_frames.json */; };
 		4BAB9D4C1829F80F00D2C853 /* EmojiFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAB9D4B1829F80F00D2C853 /* EmojiFrameView.m */; };
+		4BAB9D4E182A1B2800D2C853 /* pet_faces.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BAB9D4D182A1B2800D2C853 /* pet_faces.json */; };
 		4BB7319317BAA00C009294E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319217BAA00C009294E0 /* UIKit.framework */; };
 		4BB7319517BAA00C009294E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319417BAA00C009294E0 /* Foundation.framework */; };
 		4BB7319717BAA00C009294E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB7319617BAA00C009294E0 /* CoreGraphics.framework */; };
@@ -85,6 +86,7 @@
 		4BAB9D481829F5C700D2C853 /* pet_frames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pet_frames.json; sourceTree = "<group>"; };
 		4BAB9D4A1829F80F00D2C853 /* EmojiFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiFrameView.h; sourceTree = "<group>"; };
 		4BAB9D4B1829F80F00D2C853 /* EmojiFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiFrameView.m; sourceTree = "<group>"; };
+		4BAB9D4D182A1B2800D2C853 /* pet_faces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pet_faces.json; sourceTree = "<group>"; };
 		4BB7318F17BAA00C009294E0 /* FacePet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacePet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB7319217BAA00C009294E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BB7319417BAA00C009294E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +172,7 @@
 				4BAB9D26182980D600D2C853 /* FOX_cropped@2x.png */,
 				4BAB9D27182980D600D2C853 /* ELEPHANT_cropped@2x.png */,
 				4BAB9D481829F5C700D2C853 /* pet_frames.json */,
+				4BAB9D4D182A1B2800D2C853 /* pet_faces.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				4BAB9D2A182980D600D2C853 /* ELEPHANT_cropped@2x.png in Resources */,
 				4BAB9D491829F5C700D2C853 /* pet_frames.json in Resources */,
 				4BAB9D29182980D600D2C853 /* FOX_cropped@2x.png in Resources */,
+				4BAB9D4E182A1B2800D2C853 /* pet_faces.json in Resources */,
 				4BAB9D401829BCAA00D2C853 /* pebble_watch.png in Resources */,
 				4BAB9D28182980D600D2C853 /* BEAR_cropped@2x.png in Resources */,
 				4BB7319D17BAA00C009294E0 /* InfoPlist.strings in Resources */,
