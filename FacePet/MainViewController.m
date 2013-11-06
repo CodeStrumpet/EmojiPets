@@ -91,28 +91,6 @@ typedef enum FBUpdateState {
     }];
 }
 
-- (void)updateUserBarButton {
-    
-    UIImage *profileImage = [AppSettings userProfileImage];
-    if (profileImage) {
-        UIView* leftButtonView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
-        
-        UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        leftButton.backgroundColor = [UIColor clearColor];
-        leftButton.frame = leftButtonView.frame;
-        
-        [leftButton setImage:[profileImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-        [leftButton setTitle:@"" forState:UIControlStateNormal];
-        leftButton.autoresizesSubviews = YES;
-        leftButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin;
-        [leftButton addTarget:self action:@selector(presentLoginViewController) forControlEvents:UIControlEventTouchUpInside];
-        [leftButtonView addSubview:leftButton];
-        
-        UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:leftButtonView];
-        //self.navigationItem.rightBarButtonItem = leftBarButton;
-    }
-
-}
 
 - (void)updateEmojiPetDisplay {
     PetType petType = [AppSettings petType];
@@ -126,22 +104,7 @@ typedef enum FBUpdateState {
         [self.navigationItem setRightBarButtonItem:nil];
         
     } else {
-        _emojiFrame.enabled = YES; // DEBUG !!!! SET THIS TO NO
-        
-        UIView* leftButtonView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 37.5)];
-        
-        UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        leftButton.backgroundColor = [UIColor clearColor];
-        leftButton.frame = leftButtonView.frame;
-        [leftButton setImage:[[ResourceHelper petFrameImageForPetType:petType] imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-        [leftButton setTitle:@"" forState:UIControlStateNormal];
-        leftButton.autoresizesSubviews = YES;
-        leftButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin;
-        [leftButton addTarget:self action:@selector(showPetSelectorViewController) forControlEvents:UIControlEventTouchUpInside];
-        [leftButtonView addSubview:leftButton];
-        
-        UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:leftButtonView];
-        //self.navigationItem.leftBarButtonItem = leftBarButton;
+        _emojiFrame.enabled = NO; // DEBUG !!!! SET THIS TO NO
         
     }
 }
