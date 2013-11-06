@@ -12,6 +12,8 @@
 
 + (PetType)petType;
 + (void)setPetType:(PetType)type;
++ (int)faceSetNum;
++ (void)setFaceSetNum:(int)setNum;
 + (UIImage *)userProfileImage;
 + (void)setUserProfileImageData:(NSData *)imageData;
 + (NSString *)userName;

@@ -12,6 +12,6 @@
 
 + (UIImage *)petFrameImageForPetType:(PetType)petType;
 
-+ (UIImage *)petFaceForHungerLevel:(int)hungerLevel andExcitementLevel:(int)excitement;
++ (UIImage *)petFaceForFaceSet:(int)faceSet hungerLevel:(int)hungerLevel andExcitementLevel:(int)excitement;
 
 @end

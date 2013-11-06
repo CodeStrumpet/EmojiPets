@@ -11,6 +11,7 @@
 @implementation AppSettings
 
 #define PET_TYPE_KEY @"PetType"
+#define FACE_SET_NUM_KEY @"FaceSetNum"
 #define PROFILE_IMAGE_DATA_KEY @"ProfileImageData"
 #define USER_NAME_KEY @"UserName"
 #define FACEBOOK_ID_KEY @"FacebookID"
@@ -21,6 +22,14 @@
 
 + (void)setPetType:(PetType)type {
     [[NSUserDefaults standardUserDefaults] setInteger:type forKey:PET_TYPE_KEY];
+}
+
++ (int)faceSetNum {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:FACE_SET_NUM_KEY];
+}
+
++ (void)setFaceSetNum:(int)setNum {
+    [[NSUserDefaults standardUserDefaults] setInteger:setNum forKey:FACE_SET_NUM_KEY];
 }
 
 + (UIImage *)userProfileImage {

@@ -46,10 +46,8 @@ static NSArray *petFaces;
     return [UIImage imageNamed:resourceName];
 }
 
-+ (UIImage *)petFaceForHungerLevel:(int)hungerLevel andExcitementLevel:(int)excitement {
++ (UIImage *)petFaceForFaceSet:(int)faceSet hungerLevel:(int)hungerLevel andExcitementLevel:(int)excitement {
     
-
-
     
     
 }

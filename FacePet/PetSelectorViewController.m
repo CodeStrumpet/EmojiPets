@@ -36,13 +36,21 @@
     UIBarButtonItem *dismissItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
     
     [self.navigationItem setRightBarButtonItem:dismissItem];
-
+    
+    UIBarButtonItem *petStoreItem = [[UIBarButtonItem alloc] initWithTitle:@"Pet Store" style:UIBarButtonItemStyleBordered target:nil action:@selector(goToPetStore)];
+    
+    [self.navigationItem setLeftBarButtonItem:petStoreItem];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+                                    
+- (void)goToPetStore {
+    NSLog(@"Coming soon");
 }
 
 - (void)dismiss {
