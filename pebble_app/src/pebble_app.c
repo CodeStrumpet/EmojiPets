@@ -29,19 +29,34 @@ enum {
   WEATHER_TEMPERATURE_KEY = 0x1,  // TUPLE_CSTRING
 };
 
-static uint32_t PET_FACES[] = {
-    RESOURCE_ID_IMAGE_ANGRY,
-    RESOURCE_ID_IMAGE_DEAD,
-    RESOURCE_ID_IMAGE_HAPPY,
-    RESOURCE_ID_IMAGE_HAPPY_WINK,
-    RESOURCE_ID_IMAGE_LUV_EYES,
-    RESOURCE_ID_IMAGE_NEUTRAL,
-    RESOURCE_ID_IMAGE_NEUTRAL_WINK,
-    RESOURCE_ID_IMAGE_SAD,
-    RESOURCE_ID_IMAGE_SAD_WINK,
-    RESOURCE_ID_IMAGE_SMOOCH,
-    RESOURCE_ID_IMAGE_SURPRISED,
-    RESOURCE_ID_IMAGE_SURPRISED_WINK,
+static uint32_t SET1_FACES[] = {
+    RESOURCE_ID_IMAGE_SET0_BORED_0,
+    RESOURCE_ID_IMAGE_SET0_BORED_1,
+    RESOURCE_ID_IMAGE_SET0_HAPPY_0,
+    RESOURCE_ID_IMAGE_SET0_HAPPY_1,
+    RESOURCE_ID_IMAGE_SET0_HUNGRY_0,
+    RESOURCE_ID_IMAGE_SET0_INTRIGUED_0,
+    RESOURCE_ID_IMAGE_SET0_INTRIGUED_1,
+    RESOURCE_ID_IMAGE_SET0_WORRIED_0,
+    RESOURCE_ID_IMAGE_SET0_WORRIED_1,
+    RESOURCE_ID_IMAGE_SET0_WILDCARD_2,
+    RESOURCE_ID_IMAGE_SET0_WILDCARD_3,
+    RESOURCE_ID_IMAGE_SET1_BORED_0,
+    RESOURCE_ID_IMAGE_SET1_BORED_1,
+    RESOURCE_ID_IMAGE_SET1_BORED_2,
+    RESOURCE_ID_IMAGE_SET1_BORED_3,
+    RESOURCE_ID_IMAGE_SET1_HAPPY_0,
+    RESOURCE_ID_IMAGE_SET1_HAPPY_1,
+    RESOURCE_ID_IMAGE_SET1_HAPPY_3,
+    RESOURCE_ID_IMAGE_SET1_HUNGRY_0,
+    RESOURCE_ID_IMAGE_SET1_INTRIGUED_0,
+    RESOURCE_ID_IMAGE_SET1_INTRIGUED_1,
+    RESOURCE_ID_IMAGE_SET1_INTRIGUED_2, // HAPPY_2 deduped into this one
+    RESOURCE_ID_IMAGE_SET1_INTRIGUED_3,
+    RESOURCE_ID_IMAGE_SET1_WORRIED_0,
+    RESOURCE_ID_IMAGE_SET1_WORRIED_1,
+    RESOURCE_ID_IMAGE_SET1_WORRIED_2,
+    RESOURCE_ID_IMAGE_SET1_WORRIED_3,
 };
 
 static void load_bitmap(uint32_t resource_id) {
@@ -73,7 +88,8 @@ static void sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tup
 
   switch (key) {
   case WEATHER_ICON_KEY:
-    load_bitmap(PET_FACES[new_tuple->value->uint8]);
+    //load_bitmap(PET_FACES[new_tuple->value->uint8]);
+    load_bitmap(SET1_FACES[new_tuple->value->uint8]);
     bitmap_layer_set_bitmap(&s_data.icon_layer, &s_data.icon_bitmap.bmp);
     break;
   case WEATHER_TEMPERATURE_KEY:
@@ -96,7 +112,7 @@ static void weather_app_init(AppContextRef c) {
   window_set_background_color(window, GColorBlack);
   window_set_fullscreen(window, true);
 
-  GRect icon_rect = (GRect) {(GPoint) {0, 0}, (GSize) { 144, 168 }};
+  GRect icon_rect = (GRect) {(GPoint) {0, 0}, (GSize) { 168, 144 }};
   bitmap_layer_init(&s_data.icon_layer, icon_rect);
   layer_add_child(&window->layer, &s_data.icon_layer.layer);
 
