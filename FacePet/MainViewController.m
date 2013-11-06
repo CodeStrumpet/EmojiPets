@@ -143,9 +143,7 @@ typedef enum FBUpdateState {
     // Send data to watch:
     // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definitions on the watch's end:
     NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
-    NSNumber *temperatureKey = @(1); // This is our custom-defined key for the temperature string.
-    NSDictionary *update = @{ iconKey:[NSNumber numberWithUint8:1],
-                              temperatureKey:[NSString stringWithFormat:@"%d\u00B0C", 55] };
+    NSDictionary *update = @{ iconKey:[NSNumber numberWithUint8:1] };
     
     [[AppDelegate instance].targetWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
         
@@ -177,9 +175,7 @@ typedef enum FBUpdateState {
     // Send data to watch:
     // See demos/feature_app_messages/weather.c in the native watch app SDK for the same definitions on the watch's end:
     NSNumber *iconKey = @(0); // This is our custom-defined key for the icon ID, which is of type uint8_t.
-    NSNumber *temperatureKey = @(1); // This is our custom-defined key for the temperature string.
-    NSDictionary *update = @{ iconKey:[NSNumber numberWithUint8:imageNum],
-                              temperatureKey:[NSString stringWithFormat:@"%d\u00B0C", 55] };
+    NSDictionary *update = @{ iconKey:[NSNumber numberWithUint8:imageNum] };
     
     [[AppDelegate instance].targetWatch appMessagesPushUpdate:update onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
         
