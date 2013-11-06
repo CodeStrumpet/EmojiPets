@@ -46,10 +46,28 @@ static NSArray *petFaces;
     return [UIImage imageNamed:resourceName];
 }
 
-+ (UIImage *)petFaceForFaceSet:(int)faceSet hungerLevel:(int)hungerLevel andExcitementLevel:(int)excitement {
++ (NSDictionary *)petFaceForFaceSetNum:(int)faceSetNum hungerLevel:(int)hungerLevel andExcitementLevel:(int)excitement {
     
+    if (faceSetNum >= [petFaces count]) {
+        NSLog(@"FaceSetNum out of range");
+        return nil;
+    }
+
+    NSArray *faceSet = [petFaces objectAtIndex:faceSetNum];
+    if (hungerLevel >= [faceSet count]) {
+        NSLog(@"Hunger level out of range");
+        return nil;
+    }
     
+    NSArray *hungerSet = [faceSet objectAtIndex:hungerLevel];
+    if (excitement >= [hungerSet count]) {
+        NSLog(@"ExcitementLevel out of range");
+        return nil;
+    }
     
+    NSDictionary *petFace = [hungerSet objectAtIndex:excitement];
+    
+    return petFace;
 }
 
 @end

@@ -33,7 +33,6 @@ typedef enum FBUpdateState {
 @property (nonatomic, strong) FBDiff *feedDiff;
 @property (nonatomic, strong) FBDiff *statusesDiff;
 @property (nonatomic, assign) FBUpdateState currUpdateState;
-@property (strong, nonatomic) IBOutlet UISlider *slider;
 @property (strong, nonatomic) IBOutlet EmojiFrameView *emojiFrameView;
 
 @end
@@ -198,6 +197,10 @@ typedef enum FBUpdateState {
     [_slider setValue:sliderValue animated:YES];
     
     NSLog(@"new slider value: %d", (int)_slider.value);
+    
+    //    NSString *key = [[petFace allKeys] firstObject];
+    
+
     
     [self updateWatchImage:(int)_slider.value];
 }
