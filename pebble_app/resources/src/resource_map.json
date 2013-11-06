@@ -2,6 +2,91 @@
     "friendlyVersion": "1.0", 
     "media": [
         {
+            "defName": "IMAGE_SET0_BORED_0",
+            "file": "img/set0/BORED_0.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_BORED_1",
+            "file": "img/set0/BORED_1.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_BORED_2",
+            "file": "img/set0/BORED_2.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_BORED_3",
+            "file": "img/set0/BORED_3.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_HAPPY_0",
+            "file": "img/set0/HAPPY_0.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_HAPPY_1",
+            "file": "img/set0/HAPPY_1.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_HAPPY_2",
+            "file": "img/set0/HAPPY_2.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_HAPPY_3",
+            "file": "img/set0/HAPPY_3.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_HUNGRY_0",
+            "file": "img/set0/HUNGRY_0.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_INTRIGUED_0",
+            "file": "img/set0/INTRIGUED_0.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_INTRIGUED_1",
+            "file": "img/set0/INTRIGUED_1.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_INTRIGUED_2",
+            "file": "img/set0/INTRIGUED_2.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_INTRIGUED_3",
+            "file": "img/set0/INTRIGUED_3.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_WORRIED_0",
+            "file": "img/set0/WORRIED_0.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_WORRIED_1",
+            "file": "img/set0/WORRIED_1.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_WORRIED_2",
+            "file": "img/set0/WORRIED_2.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET0_WORRIED_3",
+            "file": "img/set0/WORRIED_3.png",
+            "type": "png"
+        },
+        {
             "defName": "IMAGE_SET1_BORED_0",
             "file": "img/set1/BORED_0.png",
             "type": "png"
