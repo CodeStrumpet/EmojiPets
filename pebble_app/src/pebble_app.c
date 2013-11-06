@@ -29,7 +29,7 @@ enum {
   WEATHER_TEMPERATURE_KEY = 0x1,  // TUPLE_CSTRING
 };
 
-static uint32_t SET1_FACES[] = {
+static uint32_t EMOJI_ARRAY[] = {
     RESOURCE_ID_IMAGE_SET0_BORED_0,
     RESOURCE_ID_IMAGE_SET0_BORED_1,
     RESOURCE_ID_IMAGE_SET0_HAPPY_0,
@@ -88,8 +88,7 @@ static void sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tup
 
   switch (key) {
   case WEATHER_ICON_KEY:
-    //load_bitmap(PET_FACES[new_tuple->value->uint8]);
-    load_bitmap(SET1_FACES[new_tuple->value->uint8]);
+    load_bitmap(EMOJI_ARRAY[new_tuple->value->uint8]);
     bitmap_layer_set_bitmap(&s_data.icon_layer, &s_data.icon_bitmap.bmp);
     break;
   case WEATHER_TEMPERATURE_KEY:

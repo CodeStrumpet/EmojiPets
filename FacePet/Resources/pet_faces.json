@@ -1,4 +1,146 @@
-[["petFace1", "petFace2", "petFace3", "petface4"],
- ["petFace1", "petFace2", "petFace3", "petface4"],
- ["petFace1", "petFace2", "petFace3", "petface4"],
- ["petFace1", "petFace2", "petFace3", "petface4"]]
+[
+    [
+        [
+            {
+                "SET0_HUNGRY_0": 4
+            },
+            {
+                "SET0_HUNGRY_0": 4
+            },
+            {
+                "SET0_HUNGRY_0": 4
+            },
+            {
+                "SET0_HUNGRY_0": 4
+            }
+        ],
+        [
+            {
+                "SET0_WORRIED_0": 7
+            },
+            {
+                "SET0_WORRIED_1": 8
+            },
+            {
+                "SET0_WILDCARD_2": 9
+            },
+            {
+                "SET0_WILDCARD_3": 10
+            }
+        ],
+        [
+            {
+                "SET0_BORED_0": 0
+            },
+            {
+                "SET0_BORED_1": 1
+            },
+            {
+                "SET0_WILDCARD_2": 9
+            },
+            {
+                "SET0_WILDCARD_3": 10
+            }
+        ],
+        [
+            {
+                "SET0_INTRIGUED_0": 5
+            },
+            {
+                "SET0_INTRIGUED_1": 6
+            },
+            {
+                "SET0_WILDCARD_2": 9
+            },
+            {
+                "SET0_WILDCARD_3": 10
+            }
+        ],
+        [
+            {
+                "SET0_HAPPY_0": 2
+            },
+            {
+                "SET0_HAPPY_1": 3
+            },
+            {
+                "SET0_WILDCARD_2": 9
+            },
+            {
+                "SET0_WILDCARD_3": 10
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "SET1_HUNGRY_0": 18
+            },
+            {
+                "SET1_HUNGRY_0": 18
+            },
+            {
+                "SET1_HUNGRY_0": 18
+            },
+            {
+                "SET1_HUNGRY_0": 18
+            }
+        ],
+        [
+            {
+                "SET1_WORRIED_0": 23
+            },
+            {
+                "SET1_WORRIED_1": 24
+            },
+            {
+                "SET1_WORRIED_2": 25
+            },
+            {
+                "SET1_WORRIED_3": 26
+            }
+        ],
+        [
+            {
+                "SET1_BORED_0": 11
+            },
+            {
+                "SET1_BORED_1": 12
+            },
+            {
+                "SET1_BORED_2": 13
+            },
+            {
+                "SET1_BORED_3": 14
+            }
+        ],
+        [
+            {
+                "SET1_INTRIGUED_0": 19
+            },
+            {
+                "SET1_INTRIGUED_1": 20
+            },
+            {
+                "SET1_INTRIGUED_2": 21
+            },
+            {
+                "SET1_INTRIGUED_3": 22
+            }
+        ],
+        [
+            {
+                "SET1_HAPPY_0": 15
+            },
+            {
+                "SET1_HAPPY_1": 16
+            },
+            {
+                "SET1_INTRIGUED_2": 21
+            },
+            {
+                "SET1_HAPPY_3": 17
+            }
+        ]
+    ]
+]
