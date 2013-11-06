@@ -136,7 +136,14 @@
 }
 
 - (CGRect)petFrameForPetType:(PetType)type {
+ 
+    NSNumber *key = [NSNumber numberWithInt:type];
     
+    NSValue *rectValue = [_petFramesRects objectForKey:key];
+    
+    CGRect rect = [rectValue CGRectValue];
+    
+    return rect;
 }
 
 - (void)readEmojiFramesFromFileSystem {

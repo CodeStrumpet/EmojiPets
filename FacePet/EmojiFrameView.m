@@ -32,5 +32,11 @@
     _display.image = image;
 }
 
+- (void)setDisplayPositionWithRect:(CGRect)displayRect {
+    _displayX = displayRect.origin.x;
+    _displayY = displayRect.origin.y;
+    _displayWidth = displayRect.size.width;
+    _displayHeight = displayRect.size.height;
+}
 
 @end

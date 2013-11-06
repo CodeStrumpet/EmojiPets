@@ -20,4 +20,5 @@
 
 - (void)updateLayout;
 - (void)displayImage:(UIImage *)image;
+- (void)setDisplayPositionWithRect:(CGRect)displayRect; 
 @end
