@@ -87,11 +87,6 @@
             "type": "png"
         },
         {
-            "defName": "IMAGE_SET1_HAPPY_2",
-            "file": "img/set1/HAPPY_2.png",
-            "type": "png"
-        },
-        {
             "defName": "IMAGE_SET1_HAPPY_3",
             "file": "img/set1/HAPPY_3.png",
             "type": "png"
