@@ -7,8 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
-                <outlet property="emojiDisplay" destination="dR0-G4-nYN" id="qAd-71-57H"/>
-                <outlet property="emojiFrame" destination="85v-IU-KQ8" id="CPG-ch-rlH"/>
+                <outlet property="emojiFrameView" destination="iMK-c2-cZN" id="5oh-w6-UFB"/>
                 <outlet property="slider" destination="ZVx-bk-Rde" id="rGl-Fh-qk9"/>
                 <outlet property="view" destination="2" id="8"/>
             </connections>
@@ -18,6 +17,33 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" id="iMK-c2-cZN" customClass="EmojiFrameView">
+                    <rect key="frame" x="60" y="93" width="200" height="284"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="85v-IU-KQ8">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="188"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="emojiFramePressed:" destination="-1" eventType="touchUpInside" id="VTY-qJ-v3t"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BEAR_cropped.png" id="dR0-G4-nYN">
+                            <rect key="frame" x="48" y="101" width="104" height="82"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.68384662383806349" blue="0.0023652419339791342" alpha="0.0" colorSpace="calibratedRGB"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="display" destination="dR0-G4-nYN" id="L8D-9d-ZHv"/>
+                        <outlet property="frameButton" destination="85v-IU-KQ8" id="UJl-84-Bpz"/>
+                    </connections>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QLO-Ew-gRP">
                     <rect key="frame" x="74" y="461" width="172" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -45,21 +71,6 @@
                         <action selector="sliderChanged:" destination="-1" eventType="touchUpInside" id="ZDF-9i-Cv9"/>
                     </connections>
                 </slider>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="85v-IU-KQ8">
-                    <rect key="frame" x="60" y="93" width="200" height="188"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="emojiFramePressed:" destination="-1" eventType="touchUpInside" id="VTY-qJ-v3t"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dR0-G4-nYN">
-                    <rect key="frame" x="108" y="113" width="104" height="82"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -67,4 +78,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="BEAR_cropped.png" width="215" height="202"/>
+    </resources>
 </document>

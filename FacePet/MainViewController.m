@@ -16,6 +16,7 @@
 #import "LoginViewController.h"
 #import "FBDiff.h"
 #import "PetSelectorViewController.h"
+#import "EmojiFrameView.h"
 
 typedef enum FBUpdateState {
     UpdateStateNone = 0x0,
@@ -33,8 +34,7 @@ typedef enum FBUpdateState {
 @property (nonatomic, strong) FBDiff *statusesDiff;
 @property (nonatomic, assign) FBUpdateState currUpdateState;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
-@property (strong, nonatomic) IBOutlet UIButton *emojiFrame;
-@property (strong, nonatomic) IBOutlet UIImageView *emojiDisplay;
+@property (strong, nonatomic) IBOutlet EmojiFrameView *emojiFrameView;
 
 @end
 
@@ -95,17 +95,23 @@ typedef enum FBUpdateState {
     PetType petType = [AppSettings petType];
     
     UIImage *backgroundImage = [ResourceHelper petFrameImageForPetType:petType];
-    
-    [_emojiFrame setBackgroundImage:backgroundImage forState:UIControlStateNormal];
+    [_emojiFrameView displayFrameImage:backgroundImage];
+
     if (petType == PetTypeNone) {
-        _emojiFrame.enabled = YES;
         
+        _emojiFrameView.frameButton.enabled = YES;
+        [_emojiFrameView displayImage:nil];
         [self.navigationItem setRightBarButtonItem:nil];
         
     } else {
-        _emojiFrame.enabled = NO; // DEBUG !!!! SET THIS TO NO
+        _emojiFrameView.frameButton.enabled = NO;
         
+        // update display frame size
+        CGRect petFrameRect = [[AppDelegate instance] petFrameForPetType:petType];
+        [_emojiFrameView setDisplayPositionWithRect:petFrameRect];
+        [_emojiFrameView updateLayout];
     }
+    
 }
 
 - (void)presentLoginViewControllerIfNecessary {

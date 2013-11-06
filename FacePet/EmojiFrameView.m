@@ -29,7 +29,16 @@
 }
 
 - (void)displayImage:(UIImage *)image {
+    if (image) {
+        _display.hidden = NO;
+    } else {
+        _display.hidden = YES;
+    }
     _display.image = image;
+}
+
+- (void)displayFrameImage:(UIImage *)image {
+    [_frameButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 - (void)setDisplayPositionWithRect:(CGRect)displayRect {
