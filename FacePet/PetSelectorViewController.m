@@ -63,6 +63,14 @@
     
 }
 
+- (IBAction)faceSetChanged:(id)sender {
+    if (((UISwitch *) sender).isOn) {
+        [AppSettings setFaceSetNum:1];
+    } else {
+        [AppSettings setFaceSetNum:0];
+    }
+}
+
 - (void)updatePetDisplay {
     
     PetType type = [AppSettings petType];

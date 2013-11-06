@@ -208,10 +208,9 @@ typedef enum FBUpdateState {
 }
 
 
-
 #pragma mark - DEBUG
 
-- (IBAction)hungrySliderChanged:(id)sender {
+- (IBAction)debugSegmentChanged:(id)sender {
     int excitementState = ((UISegmentedControl *) sender).selectedSegmentIndex;
     
     int hungerState = ((UISegmentedControl *) sender).tag;
@@ -225,23 +224,13 @@ typedef enum FBUpdateState {
     if (petFaceName) {
         UIImage *petFaceImage = [UIImage imageNamed:petFaceName];
         [_emojiFrameView displayImage:petFaceImage];
-    }    
+        
+        NSNumber *watchImageNumber = [petFace objectForKey:petFaceName];
+        
+        [self updateWatchImage:[watchImageNumber intValue]];
+    }
 }
 
-- (IBAction)worriedSliderChanged:(id)sender {
-    
-}
 
-- (IBAction)boredSliderChanged:(id)sender {
-    
-}
-
-- (IBAction)intriguedSliderChanged:(id)sender {
-    
-}
-
-- (IBAction)happySliderChanged:(id)sender {
-    
-}
 
 @end

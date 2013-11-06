@@ -31,10 +31,18 @@
 - (void)displayImage:(UIImage *)image {
     if (image) {
         _display.hidden = NO;
+        
+
+        UIImage * landscapeImage = [[UIImage alloc] initWithCGImage: image.CGImage
+                                                             scale: 1.0
+                                                       orientation: UIImageOrientationRight];
+        _display.image = landscapeImage;
+        
     } else {
         _display.hidden = YES;
+        _display.image = image;
     }
-    _display.image = image;
+    
 }
 
 - (void)displayFrameImage:(UIImage *)image {
