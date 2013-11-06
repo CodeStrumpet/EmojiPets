@@ -2,63 +2,88 @@
     "friendlyVersion": "1.0", 
     "media": [
         {
-            "defName": "IMAGE_ANGRY",
-            "file": "img/angry.png",
+            "defName": "IMAGE_SET1_BORED_0",
+            "file": "img/set1/BORED_0.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_DEAD",
-            "file": "img/dead.png",
+            "defName": "IMAGE_SET1_BORED_1",
+            "file": "img/set1/BORED_1.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_HAPPY",
-            "file": "img/happy.png",
+            "defName": "IMAGE_SET1_BORED_2",
+            "file": "img/set1/BORED_2.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_HAPPY_WINK",
-            "file": "img/happy_wink.png",
+            "defName": "IMAGE_SET1_BORED_3",
+            "file": "img/set1/BORED_3.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_LUV_EYES",
-            "file": "img/luv_eyes.png",
+            "defName": "IMAGE_SET1_HAPPY_0",
+            "file": "img/set1/HAPPY_0.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_NEUTRAL",
-            "file": "img/neutral.png",
+            "defName": "IMAGE_SET1_HAPPY_1",
+            "file": "img/set1/HAPPY_1.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_NEUTRAL_WINK",
-            "file": "img/neutral_wink.png",
+            "defName": "IMAGE_SET1_HAPPY_2",
+            "file": "img/set1/HAPPY_2.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_SAD",
-            "file": "img/sad.png",
+            "defName": "IMAGE_SET1_HAPPY_3",
+            "file": "img/set1/HAPPY_3.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_SAD_WINK",
-            "file": "img/sad_wink.png",
+            "defName": "IMAGE_SET1_HUNGRY_0",
+            "file": "img/set1/HUNGRY_0.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_SMOOCH",
-            "file": "img/smooch.png",
+            "defName": "IMAGE_SET1_INTRIGUED_0",
+            "file": "img/set1/INTRIGUED_0.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_SURPRISED",
-            "file": "img/surprised.png",
+            "defName": "IMAGE_SET1_INTRIGUED_1",
+            "file": "img/set1/INTRIGUED_1.png",
             "type": "png"
         },
         {
-            "defName": "IMAGE_SURPRISED_WINK",
-            "file": "img/surprised_wink.png",
+            "defName": "IMAGE_SET1_INTRIGUED_2",
+            "file": "img/set1/INTRIGUED_2.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET1_INTRIGUED_3",
+            "file": "img/set1/INTRIGUED_3.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET1_WORRIED_0",
+            "file": "img/set1/WORRIED_0.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET1_WORRIED_1",
+            "file": "img/set1/WORRIED_1.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET1_WORRIED_2",
+            "file": "img/set1/WORRIED_2.png",
+            "type": "png"
+        },
+        {
+            "defName": "IMAGE_SET1_WORRIED_3",
+            "file": "img/set1/WORRIED_3.png",
             "type": "png"
         }
     ], 
