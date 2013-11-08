@@ -11,8 +11,22 @@ angular.module('myApp.controllers', []).
     };
 
   }).
-  controller('EmojiPetsCtrl', function ($scope) {
-    // write Ctrl here
+  controller('EmojiPetsCtrl', function ($scope, $timeout) {
+
+    $scope.bearImagePath = "images/BEAR.png";
+    $scope.bearWinkImagePath = "images/BEAR_wink.png";
+
+    $scope.bearImageSrc = $scope.bearImagePath;
+
+    $scope.bearWink = function() {
+      $scope.bearImageSrc = $scope.bearWinkImagePath;
+
+      $timeout(function() {
+        $scope.$apply(function () {
+          $scope.bearImageSrc = $scope.bearImagePath;                  
+        });
+      }, 400);
+    }
 
   }).
   controller('AboutCtrl', function ($scope) {

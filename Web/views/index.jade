@@ -1,21 +1,25 @@
 extends layout
 
 block body
-  div(ng-controller="AppCtrl").navbar.navbar-fixed-top.navbar-inverse
-    .container
-      .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-          a.navbar-brand(href='#') DataWinks
-      .collapse.navbar-collapse.navbar-responsive-collapse
-        ul.nav.navbar-nav
-          li(ng-class="{ active: isActive('/emojipets')}")
-            a(href="/emojipets") EmojiPets
-          li(ng-class="{ active: isActive('/about')}")
-            a(href="/about") About
-  div(ng-view)
+  div(ng-controller="AppCtrl")
+    div().navbar.navbar-fixed-top.navbar-inverse
+      .container
+        .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href='#') DataWinks
+        .collapse.navbar-collapse.navbar-responsive-collapse
+          ul.nav.navbar-nav
+            li(ng-class="{ active: isActive('/emojipets')}")
+              a(href="/emojipets") EmojiPets
+            li(ng-class="{ active: isActive('/about')}")
+              a(href="/about") About
+    div.container.container-fluid
+      div.row
+        div.span12
+          div(ng-view)
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
