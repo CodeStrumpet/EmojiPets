@@ -11,6 +11,8 @@
 @interface PetSelectorViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *petFrameImageView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) IBOutlet UISwitch *faceSwitch;
+@property (strong, nonatomic) IBOutlet UIImageView *petFaceImageView;
 
 @end
 
@@ -41,6 +43,29 @@
     
     [self.navigationItem setLeftBarButtonItem:petStoreItem];
     
+    
+    int faceSetNum = [AppSettings faceSetNum];
+    if (faceSetNum == 0) {
+        _faceSwitch.on = NO;
+    } else {
+        _faceSwitch.on = YES;
+    }
+    [self updatePetFace];
+}
+
+- (void)updatePetFace {
+    int faceSetNum = [AppSettings faceSetNum];
+    UIImage *image;
+    if (faceSetNum == 0) {
+        image = [UIImage imageNamed:@"SET0_HAPPY_0"];
+    } else {
+        image = [UIImage imageNamed:@"SET1_HAPPY_0"];
+    }
+    
+    UIImage * landscapeImage = [[UIImage alloc] initWithCGImage: image.CGImage
+                                                          scale: 1.0
+                                                    orientation: UIImageOrientationRight];
+    _petFaceImageView.image = landscapeImage;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +94,7 @@
     } else {
         [AppSettings setFaceSetNum:0];
     }
+    [self updatePetFace];
 }
 
 - (void)updatePetDisplay {
