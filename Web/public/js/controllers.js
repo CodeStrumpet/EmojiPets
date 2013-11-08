@@ -13,8 +13,8 @@ angular.module('myApp.controllers', []).
   }).
   controller('EmojiPetsCtrl', function ($scope, $timeout) {
 
-    $scope.bearImagePath = "images/BEAR.png";
-    $scope.bearWinkImagePath = "images/BEAR_wink.png";
+    $scope.bearImagePath = "images/BEAR_eyes.png";
+    $scope.bearWinkImagePath = "images/BEAR_wink_eyes.png";
 
     $scope.bearImageSrc = $scope.bearImagePath;
 
