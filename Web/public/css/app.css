@@ -38,6 +38,10 @@ body {
   width:213;
 }
 
+.prodshot {
+  height:200px;
+}
+
 #mc_embed_signup {
   padding: 10px 20px 20px;
   width: 600px;
